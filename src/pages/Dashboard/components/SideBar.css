@@ -1,0 +1,72 @@
+.sidebarHeader{
+  display: flex;
+  align-items: center;
+}
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+.sidebarLogo > h1{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17.3082px;
+  line-height: 0px;
+  color: #FFFFFF;
+  padding-left: 30px ;
+  padding-right: 10px;
+} 
+.sideBar{
+  width: 250px;
+}
+.sideBarSubMenu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.navBar {
+    height: 60px;
+    width: 225px;
+    display: flex;
+    /* justify-content: end; */
+    margin-right: 25px;
+    align-items: center;
+
+  }
+  .navMenu {
+    background-color: #3578e5;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 850ms;
+    margin-top: 0px;
+    
+  }
+  .navMenu .active {
+    left: 0;
+    transition: 350ms;
+  }
+  .navText {
+    display: flex;
+    justify-content: start;
+    padding: 2px 0px;
+    list-style: none;
+    height: 25px;
+  }
+  .navMenuItems {
+    width: 100%;
+  }
+  span {
+    margin-left: 18px;
+  } 
+  
+  .menuBars {
+    font-size: 25px;
+    background: none;
+    color: #fff;
+   
+  }
+

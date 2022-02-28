@@ -1,0 +1,177 @@
+.dashboardLayout {
+  display: flex;
+}
+
+.children {
+  flex: 9;
+  background: #f5f5f5;
+  flex-direction: column;
+}
+.header {
+  width: 100%;
+  background-color: #fff;
+}
+.mainChild {
+  margin: 100px 0px 0px 25px;
+}
+.addNewUser {
+  width: 450px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.headerLogo > h1 {
+  color: #3578e5;
+  font-size: 18px;
+}
+
+.addUserBody {
+  margin: 30px;
+}
+.addUserBody input {
+  padding-left: 30px;
+  width: 350px;
+  height: 50px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.addUserBody .formInput {
+  margin: 20px 0px;
+}
+
+.addUserTop {
+  margin: 25px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.headerFrame {
+  margin-top: -100px;
+  margin-left: -20px;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.headerList {
+  display: flex;
+  justify-content: space-around;
+}
+.headerList > p {
+  margin: 0px 20px;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+.componentBody {
+  width: auto;
+  height: auto;
+  padding: 50px;
+}
+.createCampaign {
+  /* width: 700px;
+height: 600px; */
+  background: #ffffff;
+}
+.createCampaign > div > h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  margin: 10px;
+}
+.createCampaign > div > p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  margin: 10px;
+}
+.createCampaignForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.createFormInput {
+  margin: 25px 0px;
+}
+.createFormInput > p {
+  margin-left: 25px;
+}
+.createFormInput > input {
+  cursor: pointer;
+  padding: 10px 20px;
+  width: 250px;
+  height: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 10px 20px;
+  border: 1px solid grey;
+}
+.createBtn {
+  width: 120px;
+  height: 35px;
+  background: #3578e5;
+  border-radius: 5px;
+  margin: 25px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.twitterFeed {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #666666;
+  box-sizing: border-box;
+}
+.feedText {
+  margin: auto;
+  padding: 60px 0px;
+  height: 113px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  /* or 82% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+.adsCard {
+  padding: 10px;
+  width: 180px;
+  height: 120px;
+  border: 1px solid #666666;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.adsCard > h2 {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.chartContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.cardContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+

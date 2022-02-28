@@ -1,0 +1,283 @@
+.dashboardTop {
+  background: #e4edfc;
+  border-radius: 20px;
+  width: 1000px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+.img {
+  width: 120px;
+  height: 200px;
+  margin-top: -50px;
+}
+.img1 {
+  width: 110px;
+  height: 130px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+h2 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 19px;
+  color: #0a2147;
+}
+.dashboardTop p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+  color: #586780;
+  padding-top: 20px;
+}
+.mainCard {
+  width: 283px;
+  height: 134px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.userCard {
+  width: 267px;
+  height: 382px;
+  background: #ebf7fb;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.cardSplit {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: 20px;
+}
+.cardSplit > div {
+  text-align: center;
+  width: 50%;
+}
+.cardSplit h2 {
+  margin-bottom: 10px;
+}
+.cardBottom {
+  width: 191px;
+  height: 37px;
+  border: 2px solid #c4c4c4;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+.cardTitle {
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cardTitle h4 {
+  margin: 10px 0px;
+}
+.userCardHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin: 0px 20px;
+}
+.planCard {
+  width: 220px;
+  height: 250px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.planCardHeader {
+  margin: 50px auto;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.planCardHeader > h5 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+.planCardHeader > p {
+  font-size: 13px;
+  margin-bottom: -25px;
+}
+.planCardContent li {
+  color: #fff;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.settingHeader {
+  display: flex;
+  font-size: 15px;
+  color: #3578e5;
+  border: 1px solid #3578e5;
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+}
+.settingHeader > h5 {
+  cursor: pointer;
+  padding: auto 10px;
+  width: 100px;
+  padding-top: 6px;
+  padding-left: 6px;
+}
+.siteSettingP {
+  width: 276px;
+  height: 50px;
+  background: #90b5f1;
+  border: 1px solid hsl(217, 78%, 75%);
+  box-sizing: border-box;
+  border-radius: 0px 0px 20px 20px;
+  margin: 0px auto;
+  color: #52575c;
+  text-align: center;
+  padding: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 19px;
+  align-items: center;
+  text-align: center;
+  color: #666666;
+}
+.siteSetting {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+}
+.siteSettingDiv {
+  width: 275px;
+  background: #e9e7e7;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px 0px;
+}
+.siteFormInputBtn {
+  text-align: center;
+  padding: 10px 0px;
+  width: 150px;
+  border-radius: 10px 15px 15px 10px;
+  color: #fff;
+  margin: 10px 25px;
+}
+.siteFormInputBtn {
+  cursor: pointer;
+  background: #3578e5;
+  padding: 10px 20px;
+  width: 150px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 20px;
+}
+.siteSettingDivInp {
+  width: 239px;
+  height: 73px;
+  background: #ffffff;
+  border-radius: 20px;
+  margin: 0px auto;
+}
+.DivInp {
+  padding: 8px 50px;
+  font-size: 25px;
+}
+
+.siteFormInput > input {
+  padding-left: 20px;
+  width: 230px;
+  height: 50px;
+  border: 1px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.siteFormInput {
+  margin-left: 20px;
+}
+.settingTop {
+  margin-top: 15px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #0a2147;
+}
+.tableHeader {
+  background: #3578e5;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.tableBody {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  border-bottom: 1px solid gray;
+}
+.tableHeader .listName {
+  width: 150px;
+  text-align: center;
+  padding: 5px 0px;
+}
+.listName {
+  text-align: center;
+  width: 150px;
+  padding: 20px 0px 10px 0px;
+}
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+.paginationBtn {
+  margin: 10px;
+  color: #3578e5;
+  text-align: center;
+  padding: 15px auto;
+  width: 80px;
+  font-size: 25px;
+  border: 1px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 30px;
+}
+.tableBody > .siteFormInput > input {
+  width: 500px;
+  height: 52px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.paymentSetting {
+  display: grid;
+  grid-template-columns: 1fr 9fr 2fr;
+  justify-content: space-between;
+  text-align: center;
+  padding: 25px;
+  width: 1000px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.paymentSetting >h5{
+  text-align: start;
+}
+.paymentSetting >p{
+  cursor: pointer;
+}
