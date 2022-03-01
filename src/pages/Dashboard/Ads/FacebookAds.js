@@ -3,6 +3,7 @@ import DashboardLayout from "../components/DashboardLayout";
 import * as BsIcons from "react-icons/bs";
 import { fbAdsGenderData, fbAdsLikesData, fbAdsViewerByDeviceData } from "./components/adsData";
 import AdsChart from "./components/AdsChart";
+import Continent from '../../../assets/images/continent.png';
 
 const AdsCard = (props) => {
   const { name, number } = props;
@@ -16,7 +17,7 @@ const AdsCard = (props) => {
 };
 const ChartCard = (props) => {
   const { width, topChartName, topChartNumber, chartName, sideContent } = props;
-
+  
   return (
     <div
       className="chartCard"
@@ -39,8 +40,9 @@ const ChartCard = (props) => {
         <p>{topChartNumber}</p>
       </div>
 
-      <div style={{ display:'flex' , marginLeft: "-15px" }}>{chartName}
-      <div>{sideContent}</div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {chartName}
+        <div>{sideContent}</div>
       </div>
     </div>
   );
@@ -191,7 +193,7 @@ const FacebookAds = () => {
            <ChartCard
              width="450px"
              topChartName="Clicks"
-             chartName={''}
+             chartName={<img src={Continent} alt=" " width={450} height={180} />}
            />
            <ChartCard
              width="200px"

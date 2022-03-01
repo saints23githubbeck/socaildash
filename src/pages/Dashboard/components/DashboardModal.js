@@ -5,6 +5,7 @@ import StaticDateRangePicker from '@mui/lab/StaticDateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import Box from '@mui/material/Box';
+import { Form } from "react-bootstrap";
 
 const DashboardModal = (props) => {
   const { open, onclose, addPlan, addUser, createCampaign, viewCalender  } = props;
@@ -59,47 +60,40 @@ const DashboardModal = (props) => {
       )}
       {addPlan === "addPlan" && (
         <div className="addNewUser">
-          <div className="addUserTop">
-            <h4>Add Plan</h4>
-            <div className="addUserBody">
-              <div className="formContainer">
-                <div className="formInput">
-                  <p>Full Name</p>
-                  <input
-                    type="text"
-                    required
-                    id="name"
-                    autoComplete="name"
-                    autoFocus
-                    placeholder="Enter your full name"
-                  />
-                </div>
-                <div className="formInput">
-                  <p>Email Address</p>
-                  <input
-                    type="email"
-                    required
-                    id="email"
-                    autoComplete="email"
-                    autoFocus
-                    placeholder="Enter email"
-                  />
-                </div>
-                <div className="formInput">
-                  <p>Password</p>
-                  <input
-                    type="password"
-                    required
-                    label="Password"
-                    autoComplete="current-password"
-                    placeholder="Password"
-                  />
-                </div>
-                <button className="createBtn"> Submit</button>
+                <Form >
+            <div className="formInput">
+              <p>Name</p>
+              <input type="text" name="name" placeholder="Name" />
+            </div>
+            <div style={{display: 'flex'}}>
+              <div className="formInput">
+                <p>Monthly Price</p>
+                <input type="number" name="name" placeholder="Name" />
+              </div>
+              <div className="formInput">
+                <p>Annual Price</p>
+                <input type="number" name="name" placeholder="Name" />
               </div>
             </div>
+            <div style={{display: 'flex'}}>
+              <div className="formInput">
+                <p>Trail Days</p>
+                <input type="number" name="name" placeholder="Name" />
+              </div>
+              <div className="formInput">
+                <p>Trail Days</p>
+                <input type="number" name="name" placeholder="Name" />
+              </div>
+            </div>
+            <div className="formInput">
+          <p>Desscription</p>
+          <textarea rows={5}/>
           </div>
-        </div>
+                <button className="createBtn"> Save</button>
+                <button className="createBtn"> Cancel</button>
+         </Form>
+         </div>
+        
       )}
       {createCampaign === "createCampaign" && (
         <div className="createCampaign">

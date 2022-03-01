@@ -20,7 +20,7 @@ const AdsCard = (props) => {
 };
 const ChartCard = (props) => {
   const { width, topChartName, topChartNumber, chartName, sideContent } = props;
-
+  
   return (
     <div
       className="chartCard"
@@ -43,14 +43,13 @@ const ChartCard = (props) => {
         <p>{topChartNumber}</p>
       </div>
 
-      <div style={{ display: "flex", marginLeft: "-15px" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         {chartName}
         <div>{sideContent}</div>
       </div>
     </div>
   );
 };
-
 const GoogleAds = () => {
   const [step, setStep] = useState(1);
   return (

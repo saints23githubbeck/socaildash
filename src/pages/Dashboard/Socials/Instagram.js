@@ -9,6 +9,41 @@ import * as BiIcons from "react-icons/bi";
 import { Avatar } from "@mui/material";
 import { insAudienceAgeData, insAudienceGenderData, insImpressionData, insNewFollowerData, insProfileVisitData, insReachData, insWebsiteClickData } from "./components/socialData";
 
+
+const ChartCard = (props) => {
+  const { width, topChartName, topChartNumber, chartName, sideContent } = props;
+
+  return (
+    <div
+      className="chartCard"
+      style={{
+        width: width,
+        height: "200px",
+        border: "1px solid gray",
+        padding: "15px",
+        margin: "10px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "10px",
+        }}
+      >
+        <p>{topChartName}</p>
+        <p>{topChartNumber}</p>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {chartName}
+        <div>{sideContent}</div>
+      </div>
+    </div>
+  );
+};
+
+
 const Instagram = () => {
   const [step, setStep] = useState(1);
   const [down, setDown] = useState(6);
@@ -100,73 +135,24 @@ const Instagram = () => {
                 }}
               >
                 <p>Followers</p>
-                <h1>900</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>900</h1>
               </div>
-
-              <div
-                style={{
-                  width: "600px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>New Followers</p>
-                <AdminChart insNewFollower={true} data={insNewFollowerData} />
-              </div>
+              <ChartCard width={600} topChartName={'New Followers'} topChartNumber={''} chartName={<AdminChart insNewFollower={true} data={insNewFollowerData} />} sideContent={''} /> 
             </div>
 
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Reach</p>
-                  <p>200</p>
-                </div>
-
-                <div>
-                <AdminChart insReach={true} data={insReachData} />
-
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Impression</p>
-                  <p>200</p>
-                </div>
-
-                <div>
-                <AdminChart insImpression={true} data={insImpressionData} />
-              
-                </div>
-              </div>
+            <ChartCard width={300} topChartName={'Reach'} topChartNumber={'200'} chartName={<AdminChart insReach={true} data={insReachData} />} sideContent={''} /> 
+            <ChartCard width={300} topChartName={'Impression'} topChartNumber={'200'} chartName={<AdminChart insImpression={true} data={insImpressionData} />} sideContent={''} /> 
             </div>
           </div>
         )}
         {step === 2 && (
           <div>
             <div style={{ display: "flex" }}>
-              <div
+            <div
                 style={{
                   width: "200px",
                   height: "200px",
@@ -176,7 +162,10 @@ const Instagram = () => {
                 }}
               >
                 <p>Emails</p>
-                <h1>200</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>200</h1>
               </div>
               <div
                 style={{
@@ -188,7 +177,10 @@ const Instagram = () => {
                 }}
               >
                 <p>Get Direction</p>
-                <h1>15</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>15</h1>
               </div>
               <div
                 style={{
@@ -200,75 +192,24 @@ const Instagram = () => {
                 }}
               >
                 <p>Calls</p>
-                <h1>12</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>12</h1>
               </div>
             </div>
 
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <div
-                style={{
-                  width: "300px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Profile Visit</p>
-                  <p>608</p>
-                </div>
-                <AdminChart insProfileVisit={true} data={insProfileVisitData} />
-              </div>
-              <div
-                style={{
-                  width: "300px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Website Click</p>
-                  <p>650</p>
-                </div>
-               <AdminChart insWebsiteClick={true} data={insWebsiteClickData} />
-              </div>
+            <div style={{ display: "flex",}}>
+            <ChartCard width={300} topChartName={'Profile Visit'} topChartNumber={'608'} chartName={<AdminChart insProfileVisit={true} data={insProfileVisitData} />} sideContent={''} /> 
+            <ChartCard width={300} topChartName={'Website Click'} topChartNumber={'650'} chartName={ <AdminChart insWebsiteClick={true} data={insWebsiteClickData} />} sideContent={''} /> 
             </div>
           </div>
         )}
         {step === 3 && (
           <div>
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "650px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Age</p>
-                <AdminChart insAudienceAge={true} data={insAudienceAgeData} />
-              </div>
-              <div
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Gender</p>
-               <AdminChart insAudienceGender={true} data={insAudienceGenderData} />
-              </div>
+            <ChartCard width={650} topChartName={'Age'} topChartNumber={''} chartName={<AdminChart insAudienceAge={true} data={insAudienceAgeData} />} sideContent={''} /> 
+            <ChartCard width={200} topChartName={'Gender'} topChartNumber={''} chartName={<AdminChart insAudienceGender={true} data={insAudienceGenderData} />} sideContent={''} /> 
             </div>
           </div>
         )}

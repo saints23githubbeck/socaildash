@@ -12,7 +12,7 @@ import { linkAudienceGrowthData, linkByJobFunctionData, linkClicksData, linkImpr
 
 const ChartCard = (props) => {
   const { width, topChartName, topChartNumber, chartName, sideContent } = props;
-
+  
   return (
     <div
       className="chartCard"
@@ -35,8 +35,9 @@ const ChartCard = (props) => {
         <p>{topChartNumber}</p>
       </div>
 
-      <div style={{ display:'flex' , marginLeft: "-15px" }}>{chartName}
-      <div>{sideContent}</div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {chartName}
+        <div>{sideContent}</div>
       </div>
     </div>
   );
@@ -109,7 +110,6 @@ const Linkedin = () => {
         {step === 1 && (
           <div>
             <div>
-              {/* <ChartCard /> */}
             </div>
             <div style={{ display: "flex" }}>
               <div
@@ -122,131 +122,78 @@ const Linkedin = () => {
                 }}
               >
                 <p>Followers</p>
-                <h1>900</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>900</h1>
               </div>
-              <div
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Organic VS likes</p>
-                <AdminChart linkOrganicLikes={true} data={linkOrganicLikesData}/>
-              </div>
-
-              <div
-                style={{
-                  width: "450px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Audience Growth</p>
-                <AdminChart linkAudienceGrowth={true} data={linkAudienceGrowthData}/>
-              </div>
+              <ChartCard
+                width={200}
+                topChartName={"Organic VS likes"}
+                topChartNumber={""}
+                chartName={<AdminChart linkOrganicLikes={true} data={linkOrganicLikesData}/>}
+                sideContent={""}
+              />
+              <ChartCard
+                width={450}
+                topChartName={"Audience Growth"}
+                topChartNumber={""}
+                chartName={<AdminChart linkAudienceGrowth={true} data={linkAudienceGrowthData}/>}
+                sideContent={""}
+              />
             </div>
 
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "280px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Clicks</p>
-                  <p>200</p>
-                </div>
-                <AdminChart linkClicks={true} data={linkClicksData} />
-              </div>
-              <div
-                style={{
-                  width: "285px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Impression</p>
-                  <p>195</p>
-                </div>
-                <AdminChart linkImpression={true} data={linkImpressionData} />
-              </div>
-              <div
-                style={{
-                  width: "280px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Social Action</p>
-                  <p>50</p>
-                </div>
-                <AdminChart linkSocialAction={true} data={linkSocialActionData} />
-              </div>
+            <ChartCard
+                width={280}
+                topChartName={"Clicks"}
+                topChartNumber={"200"}
+                chartName={<AdminChart linkClicks={true} data={linkClicksData} />}
+                sideContent={""}
+              />
+                          <ChartCard
+                width={285}
+                topChartName={"Impression"}
+                topChartNumber={"195"}
+                chartName={<AdminChart linkImpression={true} data={linkImpressionData} />}
+                sideContent={""}
+              />
+              <ChartCard
+                width={280}
+                topChartName={"Social Action"}
+                topChartNumber={"50"}
+                chartName={<AdminChart linkSocialAction={true} data={linkSocialActionData} />}
+                sideContent={""}
+              />
             </div>
           </div>
         )}
         {step === 2 && (
           <div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <div
-                style={{
-                  width: "350px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Top followers by country</p>
-               <ProgressingBar />
-              </div>
-              <div
-                style={{
-                  width: "350px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Top followers by company</p>
-                <ProgressingBar />
-              </div>
+            <div style={{ display: "flex",}}>
+            <ChartCard
+                width={350}
+                topChartName={"Top followers by country"}
+                topChartNumber={""}
+                chartName={ <ProgressingBar />}
+                sideContent={""}
+              />
+            <ChartCard
+                width={350}
+                topChartName={"Top followers by company"}
+                topChartNumber={""}
+                chartName={ <ProgressingBar />}
+                sideContent={""}
+              />
             </div>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <div
-                style={{
-                  width: "500px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Followers by job function </p>
-                <AdminChart linkByJobFunction={true} data={linkByJobFunctionData} />
-              </div>
+            <div style={{ display: "flex", justifyContent:'space-around'}}>
+            <ChartCard
+                width={500}
+                topChartName={"Followers by job function"}
+                topChartNumber={""}
+                chartName={<AdminChart linkByJobFunction={true} data={linkByJobFunctionData} />}
+                sideContent={""}
+              />
             </div>
           </div>
         )}

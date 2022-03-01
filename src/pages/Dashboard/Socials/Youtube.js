@@ -14,6 +14,42 @@ import {
   youViewData,
 } from "./components/socialData";
 import { Avatar } from "@mui/material";
+import Continent from '../../../assets/images/continent.png';
+
+
+const ChartCard = (props) => {
+  const { width, topChartName, topChartNumber, chartName, sideContent } = props;
+  
+  return (
+    <div
+      className="chartCard"
+      style={{
+        width: width,
+        height: "200px",
+        border: "1px solid gray",
+        padding: "15px",
+        margin: "10px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "10px",
+        }}
+      >
+        <p>{topChartName}</p>
+        <p>{topChartNumber}</p>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {chartName}
+        <div>{sideContent}</div>
+      </div>
+    </div>
+  );
+};
+
 
 const Youtube = () => {
   const [step, setStep] = useState(1);
@@ -98,7 +134,10 @@ const Youtube = () => {
                 }}
               >
                 <p>Subscriber</p>
-                <h1>2,000</h1>
+                <h1 style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>2,000</h1>
               </div>
 
               <div
@@ -190,8 +229,12 @@ const Youtube = () => {
                 }}
               >
                 <p>Likes</p>
-                <h1>100</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>100</h1>
               </div>
+              
               <div
                 style={{
                   width: "130px",
@@ -202,7 +245,10 @@ const Youtube = () => {
                 }}
               >
                 <p>Dislikes</p>
-                <h1>-40</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>-40</h1>
               </div>
               <div
                 style={{
@@ -214,127 +260,82 @@ const Youtube = () => {
                 }}
               >
                 <p>Views</p>
-                <h1>50</h1>
+                <h1  style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>50</h1>
               </div>
-
-              <div
-                style={{
-                  width: "350px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Gained & Lost User</p>
-                <AdminChart youEngGainLostUser={true} data={youEngGainLostUserData} />
-              </div>
+              <ChartCard
+                width={350}
+                topChartName={"Gained & Lost User"}
+                topChartNumber={""}
+                chartName={<AdminChart youEngGainLostUser={true} data={youEngGainLostUserData} />}
+                sideContent={""}
+              />
             </div>
-
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <div
-                style={{
-                  width: "300px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Comments</p>
-                  <p>1000</p>
-                </div>
-                <AdminChart youAvgViewDuration={true} data={youAvgViewDurationData} />
-              </div>
-              <div
-                style={{
-                  width: "300px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Share</p>
-                  <p>1,950</p>
-                </div>
-                <AdminChart
+            <div style={{ display: "flex" }}>
+            <ChartCard
+                width={300}
+                topChartName={"Comments"}
+                topChartNumber={"1000"}
+                chartName={<AdminChart youAvgViewDuration={true} data={youAvgViewDurationData} />}
+                sideContent={""}
+              />
+                            <ChartCard
+                width={300}
+                topChartName={"Share"}
+                topChartNumber={"1,950"}
+                chartName={ <AdminChart
                   youEstimatedMinWatched={true}
                   data={youEstimatedMinWatchedData}
-                />
-              </div>
+                />}
+                sideContent={""} />
             </div>
           </div>
         )}
         {step === 3 && (
           <div>
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "650px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Age</p>
-                <AdminChart
+            <ChartCard
+                width={650}
+                topChartName={"Age"}
+                topChartNumber={""}
+                chartName={<AdminChart
                   youAge={true}
                   data={youAgeData}
-                />
-              </div>
-              <div
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Gender</p>
-                <AdminChart
+                />}
+                sideContent={""}
+              />
+              <ChartCard
+                width={200}
+                topChartName={"Gender"}
+                topChartNumber={""}
+                chartName={ <AdminChart
                   youGender={true}
                   data={youGenderData}
-                />
-              </div>
-            </div>
-
+                />}
+                sideContent={""}
+              />
+    </div>
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "400px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Views</p>
-                <img src="" alt="display map" />
-              </div>
-              <div
-                style={{
-                  width: "400px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Viewer by device</p>
-                <AdminChart
+            <ChartCard
+                width={400}
+                topChartName={"Views"}
+                topChartNumber={""}
+             chartName={<img src={Continent} alt=" " width={450} height={180} />}
+
+                sideContent={""}
+              />
+              <ChartCard
+                width={400}
+                topChartName={"Viewer by device"}
+                topChartNumber={""}
+                chartName={ <AdminChart
                   youEstimatedMinWatched={true}
                   data={youEstimatedMinWatchedData}
-                />
-              </div>
+                />}
+                sideContent={""}
+              />
             </div>
           </div>
         )}

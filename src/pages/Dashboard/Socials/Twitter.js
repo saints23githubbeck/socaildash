@@ -13,6 +13,39 @@ import {
 import AdminChart from "../components/AdminChart";
 import { Avatar } from "@mui/material";
 
+const ChartCard = (props) => {
+  const { width, topChartName, topChartNumber, chartName, sideContent } = props;
+
+  return (
+    <div
+      className="chartCard"
+      style={{
+        width: width,
+        height: "200px",
+        border: "1px solid gray",
+        padding: "15px",
+        margin: "10px",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: "10px",
+        }}
+      >
+        <p>{topChartName}</p>
+        <p>{topChartNumber}</p>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {chartName}
+        <div>{sideContent}</div>
+      </div>
+    </div>
+  );
+};
+
 const Twitter = () => {
   const [step, setStep] = useState(1);
   return (
@@ -34,7 +67,6 @@ const Twitter = () => {
         </div>
 
         <div className="headerList">
-          {" "}
           <p
             style={{ borderBottom: step === 1 ? "5px solid #3578e5" : null }}
             onClick={() => setStep(1)}
@@ -84,75 +116,45 @@ const Twitter = () => {
                 }}
               >
                 <p>Followers</p>
-                <h1>2,000</h1>
+                <h1 style={{
+                    textAlign: "center",
+                    padding: "80px 0px",
+                  }}>2,000</h1>
               </div>
-
-              <div
-                style={{
-                  width: "650px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <p>Followers</p>
-                <AdminChart twFollower={true} data={twFollowerData} />
-              </div>
+              <ChartCard
+                width={650}
+                topChartName={"Followers"}
+                topChartNumber={""}
+                chartName={
+                  <AdminChart twFollower={true} data={twFollowerData} />
+                }
+                sideContent={""}
+              />
             </div>
 
             <div style={{ display: "flex" }}>
-              <div
-                style={{
-                  width: "350px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Likes</p>
-                  <p>200</p>
-                </div>
-                <AdminChart twLikes={true} data={twLikesData} />
-              </div>
-              <div
-                style={{
-                  width: "250px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Retweet</p>
-                  <p>200</p>
-                </div>
-                <AdminChart twRetweet={true} data={twRetweetData} />
-              </div>
-              <div
-                style={{
-                  width: "250px",
-                  height: "200px",
-                  border: "1px solid gray",
-                  margin: "20px",
-                  padding: "15px",
-                }}
-              >
-                <div
-                  style={{ display: "flex", justifyContent: "space-between" }}
-                >
-                  <p>Tweet</p>
-                  <p>200</p>
-                </div>
-                <AdminChart twTweet={true} data={twTweetData} />
-              </div>
+              <ChartCard
+                width={350}
+                topChartName={"Likes"}
+                topChartNumber={"200"}
+                chartName={<AdminChart twLikes={true} data={twLikesData} />}
+                sideContent={""}
+              />
+
+              <ChartCard
+                width={250}
+                topChartName={"Retweet"}
+                topChartNumber={"200"}
+                chartName={<AdminChart twRetweet={true} data={twRetweetData} />}
+                sideContent={""}
+              />
+              <ChartCard
+                width={250}
+                topChartName={"Tweet"}
+                topChartNumber={"200"}
+                chartName={<AdminChart twTweet={true} data={twTweetData} />}
+                sideContent={""}
+              />
             </div>
           </div>
         )}
