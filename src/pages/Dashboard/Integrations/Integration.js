@@ -7,19 +7,7 @@ import DashboardLayout from "../components/DashboardLayout";
 const SocialCard = (props) => {
   const { name, icon, iconColor } = props;
   return (
-    <div
-      style={{
-        textAlign: "center",
-        padding: "30px 0px",
-        marginBottom: '20px',
-        border: "1px solid rgba(0, 0, 0, 0.5)",
-        borderRadius: "10px",
-        width: "200px",
-        height: "120px",
-        boxSizing: "border-box",
-        background:' #FFFFFF',
-      }}
-    >
+    <div className="socialCard">
       <div
         style={{
           fontSize: "30px",
@@ -61,8 +49,7 @@ const Integration = () => {
       </div>
       <div className="componentBody">
         {step === 1 && (
-          <div style={{display: 'grid', 
-          gridTemplateColumns: '1fr 1fr 1fr 1fr',}}>
+          <div className="integrationCard">
             <SocialCard name={"Facebook"} icon={<BsIcons.BsFacebook />} iconColor={'#3578E5'} />
             <SocialCard name={"Facebook Ads"} icon={<BsIcons.BsFacebook />} iconColor={' #3578E5'} />
             <SocialCard name={"Instagram"} icon={<BsIcons.BsInstagram />} iconColor={'#DF1D10'} />
@@ -77,8 +64,7 @@ const Integration = () => {
           </div>
         )}
         {step === 2 && (
-          <div style={{display: 'grid', 
-          gridTemplateColumns: '1fr 1fr 1fr 1fr',}}>
+          <div className="integrationCard">
           
             <SocialCard name={"Facebook Ads"} icon={<BsIcons.BsFacebook />} iconColor={' #3578E5'} />
             
@@ -93,8 +79,7 @@ const Integration = () => {
           </div>
         )}
         {step === 3 && (
-           <div style={{display: 'grid', 
-           gridTemplateColumns: '1fr 1fr 1fr 1fr',}}>
+           <div className="integrationCard" >
              <SocialCard name={"Facebook"} icon={<BsIcons.BsFacebook />} iconColor={'#3578E5'} />
              <SocialCard name={"Instagram"} icon={<BsIcons.BsInstagram />} iconColor={'#DF1D10'} />
            

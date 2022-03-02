@@ -1,24 +1,53 @@
 .dashboardLayout {
   display: flex;
 }
-
 .children {
-  flex: 9;
+  margin-top: 70px;
+  padding: 30px;
   background: #f5f5f5;
-  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
 }
 .header {
-  width: 100%;
   background-color: #fff;
 }
 .mainChild {
-  margin: 100px 0px 0px 25px;
+  padding: auto;
 }
 .addNewUser {
   width: 450px;
   height: 500px;
   background: #ffffff;
   border-radius: 20px;
+}
+.addNewPlan {
+  width: 600px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.planFormInput > input {
+  padding-left: 15px;
+  width: 250px;
+  height: 40px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 6px 0px;
+}
+.planFormInput > textarea {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 520px;
+  height: 80px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 6px 0px;
+}
+.addNewPlan .planFormInput {
+  margin: 10px 10px;
 }
 .headerLogo > h1 {
   color: #3578e5;
@@ -51,13 +80,18 @@
   color: #000000;
 }
 .headerFrame {
-  margin-top: -100px;
-  margin-left: -20px;
-  padding: 20px;
-  background-color: #fff;
   display: flex;
-  justify-content: space-around;
+  top: 0px;
+  left: 100px;
+  background-color: #fff;
+  padding: 10px 30px;
+  height: 60px;
+  justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 0vw;
+  flex: 11;
 }
 .headerList {
   display: flex;
@@ -166,12 +200,82 @@ height: 600px; */
   margin-top: 30px;
   color: rgba(0, 0, 0, 0.8);
 }
-.chartContainer{
+.chartContainer {
   display: flex;
   justify-content: space-between;
 }
-.cardContainer{
+.cardContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
+.integrationCard{
+  display: grid;   
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.socialCard{
+  text-align: center;
+  padding: 15px 0px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 200px;
+  height: 120px;
+  box-sizing: border-box;
+  background: #FFFFFF;
 
+
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 441px) and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 440px) {
+  .children {
+    margin-top: 70px;
+    margin-left: 70px;
+    padding: 30px;
+    background: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+  }
+  .headerFrame {
+    display: flex;
+    top: 0px;
+    left: 70px;
+    background-color: #ffffff;
+    padding: 10px 30px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    flex: 11;
+  }
+  .headerFrame > div > h1{
+    display: none;
+  }
+.integrationCard{
+  width: 100%;
+  margin-left: -60px;
+grid-template-columns: 1fr 1fr;
+}
+.socialCard{
+  text-align: center;
+  padding: 30px 0px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 150px;
+  height: 100px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  margin-right: 5px;
+
+}
+
+}

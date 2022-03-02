@@ -48,11 +48,11 @@ const Forgot = () => {
         </p>
         <div style={{ display: "flex", alignItems: "center", width: "90%", justifyContent:'space-around', }}>
           <hr
-            style={{ border: "0.5px solid grey", width: "40%", height: "0.1px" }}
+            style={{ border: "0.5px solid grey", width: "90%", height: "0.1px" }}
           />
           OR
           <hr
-            style={{ border: "1px solid black", width: "40%", height: "0.1px" }}
+            style={{ border: "1px solid black", width: "90%", height: "0.1px" }}
           />
         </div>
         <Link to="/">

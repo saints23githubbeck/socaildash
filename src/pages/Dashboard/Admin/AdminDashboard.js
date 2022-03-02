@@ -48,15 +48,7 @@ const AdminDashboard = () => {
         <img className="img" src={Celebrating} alt="" />
         <img className="img1" src={Component} alt="" />
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-around",
-          margin: "50px 0px",
-          width: "1000px",
-          height: "150px",
-        }}
-      >
+      <div className="dashboardCount">
           <MainCard
           avaterImage={''}
           avaterColor={"#2E34B6"}
@@ -81,7 +73,9 @@ const AdminDashboard = () => {
           number={5}
         />
       </div>
+      <div className="dashboardOrderChart">
       <AdminChart orderDays={true} data={dashboardChart} />
+      </div>
     </DashboardLayout>
   );
 };

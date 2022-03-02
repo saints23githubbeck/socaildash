@@ -57,13 +57,13 @@ const AdminChart = (props) => {
       {orderDays && (
         <div
           style={{
-            width: "1000px",
+            width: "90%",
             justifyContent: "center",
             margin: "20px auto",
           }}
         >
           <h1>Orders</h1>
-          <ResponsiveContainer width={950} height={200}>
+          <ResponsiveContainer width="100%" height={200}>
             <AreaChart width={500} height={200} data={data} syncId="anyId">
               <Area type="monotone" dataKey="amt" stroke="red" fill="none" />
               {/* <CartesianGrid strokeDasharray="3 3" /> */}

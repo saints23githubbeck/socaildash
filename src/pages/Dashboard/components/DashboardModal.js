@@ -11,6 +11,12 @@ const DashboardModal = (props) => {
   const { open, onclose, addPlan, addUser, createCampaign, viewCalender  } = props;
 
   const [value, setValue] = useState([null, null]);
+  const [name, setName] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${name}`);
+  };
 
   return (
     <Dialog open={open} onClose={onclose}>
@@ -59,33 +65,33 @@ const DashboardModal = (props) => {
         </div>
       )}
       {addPlan === "addPlan" && (
-        <div className="addNewUser">
-                <Form >
-            <div className="formInput">
+        <div className="addNewPlan">
+                <Form onSubmit={handleSubmit}>
+            <div className="planFormInput">
               <p>Name</p>
               <input type="text" name="name" placeholder="Name" />
             </div>
             <div style={{display: 'flex'}}>
-              <div className="formInput">
+              <div className="planFormInput">
                 <p>Monthly Price</p>
                 <input type="number" name="name" placeholder="Name" />
               </div>
-              <div className="formInput">
+              <div className="planFormInput">
                 <p>Annual Price</p>
                 <input type="number" name="name" placeholder="Name" />
               </div>
             </div>
             <div style={{display: 'flex'}}>
-              <div className="formInput">
+              <div className="planFormInput">
                 <p>Trail Days</p>
                 <input type="number" name="name" placeholder="Name" />
               </div>
-              <div className="formInput">
+              <div className="planFormInput">
                 <p>Trail Days</p>
                 <input type="number" name="name" placeholder="Name" />
               </div>
             </div>
-            <div className="formInput">
+            <div className="planFormInput">
           <p>Desscription</p>
           <textarea rows={5}/>
           </div>
