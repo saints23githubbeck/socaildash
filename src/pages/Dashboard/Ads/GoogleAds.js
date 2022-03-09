@@ -6,6 +6,7 @@ import * as FaIcons from "react-icons/fa";
 import AdsChart from "./components/AdsChart";
 import { fbAdsLikesData, linkAdsClicksData } from "./components/adsData";
 import ProgressingBar from '../components/ProgressingBar';
+import DashboardModal from "../components/DashboardModal";
 
 
 const AdsCard = (props) => {
@@ -52,6 +53,17 @@ const ChartCard = (props) => {
 };
 const GoogleAds = () => {
   const [step, setStep] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <DashboardLayout>
       <div className="headerFrame">
@@ -101,7 +113,10 @@ const GoogleAds = () => {
             Ads
           </p>
         </div>
-        <div style={{ color: "#fff", display: "flex", textAlign: "center" }}>
+        <div className="show"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
           >
@@ -121,9 +136,33 @@ const GoogleAds = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
             <div className="chartContainer">
@@ -240,6 +279,12 @@ const GoogleAds = () => {
          </div>
         )}
       </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
     </DashboardLayout>
   );
 };

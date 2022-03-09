@@ -41,7 +41,7 @@ const AdminDashboard = () => {
     <DashboardLayout>
       <h1>Dashboard</h1>
       <div className="dashboardTop">
-        <div style={{ margin: "auto auto auto 50px" }}>
+        <div className="dashboardGreeting">
           <h2>Good Afternoon, John</h2>
           <p>Check out your recent activities.</p>
         </div>

@@ -161,13 +161,7 @@ const Settings = () => {
           <div>
             <p className="settingTop">Email Settings</p>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr 1fr 1fr",
-                margin: "20px 10px",
-              }}
-            >
+            <div className="emailSettings">
               <div className="siteFormInput">
                 <p>Mail Driver</p>
                 <input
@@ -249,12 +243,7 @@ const Settings = () => {
                 />
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="emailSettingsBtn" >
               <div
                 className="siteFormInputBtn"
                 style={{ background: "#1FC8ED" }}
@@ -269,7 +258,7 @@ const Settings = () => {
           <div>
             <p className="settingTop">Payment Settings</p>
             <div>
-              <div className="tableBody">
+              <div className="sitePayment">
                 <div className="siteFormInput">
                   <p>Payment Settings *</p>
                   <input
@@ -315,12 +304,7 @@ const Settings = () => {
                             Note : This details will be used to make checkout
                             plan
                           </p>
-                          <div
-                            style={{
-                              display: "grid",
-                              gridTemplateColumns: "1fr 1fr 1fr",
-                            }}
-                          >
+                          <div className="payCollaspeDetail" >
                             <div className="siteFormInput">
                               <p>{item.name} Key</p>
                               <input

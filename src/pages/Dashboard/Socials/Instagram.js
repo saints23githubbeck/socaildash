@@ -8,6 +8,7 @@ import Image2 from "../../../assets/images/img2.png";
 import * as BiIcons from "react-icons/bi";
 import { Avatar } from "@mui/material";
 import { insAudienceAgeData, insAudienceGenderData, insImpressionData, insNewFollowerData, insProfileVisitData, insReachData, insWebsiteClickData } from "./components/socialData";
+import DashboardModal from "../components/DashboardModal";
 
 
 const ChartCard = (props) => {
@@ -47,6 +48,17 @@ const ChartCard = (props) => {
 const Instagram = () => {
   const [step, setStep] = useState(1);
   const [down, setDown] = useState(6);
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <DashboardLayout>
@@ -99,7 +111,10 @@ const Instagram = () => {
             Stories
           </p>
         </div>
-        <div style={{ color: "#fff", display: "flex", textAlign: "center" }}>
+        <div className="show"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
           >
@@ -119,12 +134,36 @@ const Instagram = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "200px",
@@ -143,7 +182,7 @@ const Instagram = () => {
               <ChartCard width={600} topChartName={'New Followers'} topChartNumber={''} chartName={<AdminChart insNewFollower={true} data={insNewFollowerData} />} sideContent={''} /> 
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard width={300} topChartName={'Reach'} topChartNumber={'200'} chartName={<AdminChart insReach={true} data={insReachData} />} sideContent={''} /> 
             <ChartCard width={300} topChartName={'Impression'} topChartNumber={'200'} chartName={<AdminChart insImpression={true} data={insImpressionData} />} sideContent={''} /> 
             </div>
@@ -151,7 +190,7 @@ const Instagram = () => {
         )}
         {step === 2 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <div
                 style={{
                   width: "200px",
@@ -199,7 +238,7 @@ const Instagram = () => {
               </div>
             </div>
 
-            <div style={{ display: "flex",}}>
+            <div className="chartContainer">
             <ChartCard width={300} topChartName={'Profile Visit'} topChartNumber={'608'} chartName={<AdminChart insProfileVisit={true} data={insProfileVisitData} />} sideContent={''} /> 
             <ChartCard width={300} topChartName={'Website Click'} topChartNumber={'650'} chartName={ <AdminChart insWebsiteClick={true} data={insWebsiteClickData} />} sideContent={''} /> 
             </div>
@@ -207,7 +246,7 @@ const Instagram = () => {
         )}
         {step === 3 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard width={650} topChartName={'Age'} topChartNumber={''} chartName={<AdminChart insAudienceAge={true} data={insAudienceAgeData} />} sideContent={''} /> 
             <ChartCard width={200} topChartName={'Gender'} topChartNumber={''} chartName={<AdminChart insAudienceGender={true} data={insAudienceGenderData} />} sideContent={''} /> 
             </div>
@@ -223,7 +262,7 @@ const Instagram = () => {
                 marginBottom: "15px",
               }}
             >
-              <div style={{ display: "flex" }}>
+              <div  className="chartContainer">
                 <Avatar />
                 <div>
                   <h3>Anthony Abigail</h3>
@@ -317,6 +356,12 @@ const Instagram = () => {
           </div>
         )}
       </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
     </DashboardLayout>
   );
 };

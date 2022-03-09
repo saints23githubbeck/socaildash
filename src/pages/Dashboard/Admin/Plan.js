@@ -7,7 +7,7 @@ const PlanCard = (props) => {
   const { planName, time, user, client, project, price, bgColor  } =
     props;
 
-
+ 
   return (
     <div className="planCard" style={{
       backgroundColor : bgColor,
@@ -27,9 +27,10 @@ const PlanCard = (props) => {
     </div>
   );
 };
+
 const Plan = () => {
   const [showModal, setShowModal] = useState(false);
-  const [addPlan, setAddPlan] = useState('')
+  const [addPlan, setAddPlan] = useState('');
  
   const handleOpen = (item) => {
     setShowModal(true);
@@ -38,7 +39,6 @@ const Plan = () => {
  
   const handleClose = () => {
     setShowModal(false);
-
   };
   return (
     <DashboardLayout>
@@ -59,7 +59,7 @@ const Plan = () => {
         <FaPlus />
         <p>Add Plan</p>
       </div>
-      <div style={{display:'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr'}}>
+      <div className="planCardList">
         <PlanCard price={0} planName={'Free Plan'} time={'1 User per hour'} user={5} client={'5 Clients'} project={5} bgColor={'blue'} />
         <PlanCard price={100} planName={'Mini Plan'} time={'5 User per hour'} user={5} client={'5 Clients'} project={5} bgColor={'red'} />
         <PlanCard price={200} planName={'Pro Plan'} time={'10 Days Trail'} user={10} client={'10 User per hour'} project={10} bgColor={'gray'} />

@@ -4,6 +4,7 @@ import * as BsIcons from "react-icons/bs";
 import { fbAdsLikesData} from "./components/adsData";
 import AdsChart from "./components/AdsChart";
 import ProgressingBar from '../components/ProgressingBar';
+import { orderData } from "../components/tableData";
 
 const AdsCard = (props) => {
   const { name, number } = props;
@@ -101,9 +102,32 @@ const TwitterAds = () => {
         <AdsCard name="Conversion" number="409" />
         <AdsCard name="Cost" number="$1,523.00" />
         </div>
-        <div>
-table
-        </div>
+        <div className=" table">
+      <table>
+          <tr className="tableHeader">
+            <th className="listName">Order Id</th>
+            <th className="listName">Name</th>
+            <th className="listName">Plan Name</th>
+            <th className="listName">Price</th>
+            <th className="listName">Status</th>
+            <th className="listName">Payment Type</th>
+            <th className="listName">Date</th>
+          </tr>
+          {orderData.map((item, index) => {
+            return (
+            <tr key={index} className="tableBody">
+            <th className="listName">{item.id}</th>
+            <th className="listName">{item.name}</th>
+            <th className="listName">{item.plan}</th>
+            <th className="listName">{item.price}</th>
+            <th className="listName">{item.status}</th>
+            <th className="listName">{item.payment}</th>
+            <th className="listName">{item.date}</th>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
       </div>}
         {step === 2 && (
           <div>

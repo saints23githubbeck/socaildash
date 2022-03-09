@@ -12,6 +12,7 @@ import {
 } from "./components/socialData";
 import AdminChart from "../components/AdminChart";
 import { Avatar } from "@mui/material";
+import DashboardModal from "../components/DashboardModal";
 
 const ChartCard = (props) => {
   const { width, topChartName, topChartNumber, chartName, sideContent } = props;
@@ -48,6 +49,17 @@ const ChartCard = (props) => {
 
 const Twitter = () => {
   const [step, setStep] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <DashboardLayout>
       <div className="headerFrame">
@@ -80,7 +92,10 @@ const Twitter = () => {
             Feeds
           </p>
         </div>
-        <div style={{ color: "#fff", display: "flex", textAlign: "center" }}>
+        <div className="show"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
           >
@@ -100,12 +115,36 @@ const Twitter = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "200px",
@@ -122,7 +161,7 @@ const Twitter = () => {
                   }}>2,000</h1>
               </div>
               <ChartCard
-                width={650}
+                width={500}
                 topChartName={"Followers"}
                 topChartNumber={""}
                 chartName={
@@ -132,9 +171,9 @@ const Twitter = () => {
               />
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <ChartCard
-                width={350}
+                width={250}
                 topChartName={"Likes"}
                 topChartNumber={"200"}
                 chartName={<AdminChart twLikes={true} data={twLikesData} />}
@@ -239,6 +278,12 @@ const Twitter = () => {
           </div>
         )}
       </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
     </DashboardLayout>
   );
 };

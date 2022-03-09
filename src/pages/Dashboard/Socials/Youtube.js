@@ -15,6 +15,7 @@ import {
 } from "./components/socialData";
 import { Avatar } from "@mui/material";
 import Continent from '../../../assets/images/continent.png';
+import DashboardModal from "../components/DashboardModal";
 
 
 const ChartCard = (props) => {
@@ -53,6 +54,17 @@ const ChartCard = (props) => {
 
 const Youtube = () => {
   const [step, setStep] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <DashboardLayout>
       <div className="headerFrame">
@@ -98,7 +110,10 @@ const Youtube = () => {
             Video
           </p>
         </div>
-        <div style={{ color: "#fff", display: "flex", textAlign: "center" }}>
+        <div className="show"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
           >
@@ -118,12 +133,36 @@ const Youtube = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "200px",
@@ -154,7 +193,7 @@ const Youtube = () => {
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "350px",
@@ -218,7 +257,7 @@ const Youtube = () => {
 
         {step === 2 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "130px",
@@ -273,7 +312,7 @@ const Youtube = () => {
                 sideContent={""}
               />
             </div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard
                 width={300}
                 topChartName={"Comments"}
@@ -295,7 +334,7 @@ const Youtube = () => {
         )}
         {step === 3 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard
                 width={650}
                 topChartName={"Age"}
@@ -317,7 +356,7 @@ const Youtube = () => {
                 sideContent={""}
               />
     </div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard
                 width={400}
                 topChartName={"Views"}
@@ -340,11 +379,11 @@ const Youtube = () => {
           </div>
         )}
         {step === 4 && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+          <div  className="post">
             <div
               style={{
                 background: "#fff",
-                width: "350px",
+                width: "280px",
                 padding: "15px",
                 marginBottom: "15px",
               }}
@@ -357,7 +396,7 @@ const Youtube = () => {
                 </div>
               </div>
               <iframe
-                width="325"
+                width="270"
                 height="150"
                 src="https://www.youtube.com/embed/1v32Op5Uwdc"
                 frameBorder="0"
@@ -373,7 +412,7 @@ const Youtube = () => {
             <div
               style={{
                 background: "#fff",
-                width: "350px",
+                width: "280px",
                 padding: "15px",
                 marginBottom: "15px",
               }}
@@ -386,7 +425,7 @@ const Youtube = () => {
                 </div>
               </div>
               <iframe
-                width="325"
+                width="270"
                 height="150"
                 src="https://www.youtube.com/embed/7cWy7a8pxVo?start=3721"
                 title="YouTube video player"
@@ -402,7 +441,7 @@ const Youtube = () => {
             <div
               style={{
                 background: "#fff",
-                width: "350px",
+                width: "280px",
                 padding: "15px",
                 marginBottom: "15px",
               }}
@@ -415,7 +454,7 @@ const Youtube = () => {
                 </div>
               </div>
               <iframe
-                width="325"
+                width="270"
                 height="150"
                 src="https://www.youtube.com/embed/xcIlp9y9Ml8?start=3010"
                 title="YouTube video player"
@@ -431,6 +470,12 @@ const Youtube = () => {
           </div>
         )}
       </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
     </DashboardLayout>
   );
 };

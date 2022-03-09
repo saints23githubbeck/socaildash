@@ -8,6 +8,7 @@ import { Avatar } from "@mui/material";
 import Image1 from "../../../assets/images/img1.png";
 import Image2 from "../../../assets/images/img2.png";
 import ProgressingBar from '../components/ProgressingBar';
+import DashboardModal from "../components/DashboardModal";
 import { linkAudienceGrowthData, linkByJobFunctionData, linkClicksData, linkImpressionData, linkOrganicLikesData, linkSocialActionData } from "./components/socialData";
 
 const ChartCard = (props) => {
@@ -45,6 +46,17 @@ const ChartCard = (props) => {
 
 const Linkedin = () => {
   const [step, setStep] = useState(1);
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
   return (
     <DashboardLayout>
       <div className="headerFrame">
@@ -84,7 +96,10 @@ const Linkedin = () => {
             Feeds
           </p>
         </div>
-        <div style={{ color: "#fff", display: "flex", textAlign: "center" }}>
+        <div className="show"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
           >
@@ -104,14 +119,38 @@ const Linkedin = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
             <div>
             </div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <div
                 style={{
                   width: "200px",
@@ -143,7 +182,7 @@ const Linkedin = () => {
               />
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
             <ChartCard
                 width={280}
                 topChartName={"Clicks"}
@@ -170,7 +209,7 @@ const Linkedin = () => {
         )}
         {step === 2 && (
           <div>
-            <div style={{ display: "flex",}}>
+            <div className="chartContainer">
             <ChartCard
                 width={350}
                 topChartName={"Top followers by country"}
@@ -186,7 +225,7 @@ const Linkedin = () => {
                 sideContent={""}
               />
             </div>
-            <div style={{ display: "flex", justifyContent:'space-around'}}>
+            <div >
             <ChartCard
                 width={500}
                 topChartName={"Followers by job function"}
@@ -198,9 +237,9 @@ const Linkedin = () => {
           </div>
         )}
         {step === 3 && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+          <div  className="post">
             <div
-              style={{ background: "#fff", width: "350px", padding: "15px", marginBottom: '15px' }}
+              style={{ background: "#fff", width: "280px", padding: "15px", marginBottom: '15px' }}
             >
               <div style={{ display: "flex" }}>
                 <Avatar />
@@ -209,14 +248,14 @@ const Linkedin = () => {
                   <p>@Abigail</p>
                 </div>
               </div>
-              <img src={Image1} alt="post" />
+              <img src={Image1} alt="post" width={270}/>
               <p>The world can be a better Place</p>
               <hr />
 
               <p>10 comment</p>
             </div>
             <div
-              style={{ background: "#fff", width: "350px", padding: "15px", marginBottom: '15px' }}
+              style={{ background: "#fff", width: "280px", padding: "15px", marginBottom: '15px' }}
             >
               <div style={{ display: "flex" }}>
                 <Avatar />
@@ -225,14 +264,14 @@ const Linkedin = () => {
                   <p>@Abigail</p>
                 </div>
               </div>
-              <img src={Image2} alt="post" />
+              <img src={Image2} alt="post" width={270} />
               <p>The world can be a better Place</p>
               <hr />
 
               <p>10 comment</p>
             </div>
             <div
-              style={{ background: "#fff", width: "350px", padding: "15px", marginBottom: '15px' }}
+              style={{ background: "#fff", width: "280px", padding: "15px", marginBottom: '15px' }}
             >
               <div style={{ display: "flex" }}>
                 <Avatar />
@@ -241,7 +280,7 @@ const Linkedin = () => {
                   <p>@Abigail</p>
                 </div>
               </div>
-              <img src={Image1} alt="post" />
+              <img src={Image1} alt="post" width={270} />
               <p>The world can be a better Place</p>
               <hr />
 
@@ -251,6 +290,12 @@ const Linkedin = () => {
           </div>
         )}
       </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
     </DashboardLayout>
   );
 };

@@ -141,8 +141,8 @@ const AdminChart = (props) => {
       )}
 
       {fbAudienceGrowth && (
-        <ResponsiveContainer width={450} height={200}>
-          <BarChart width={450} height={300} data={data}>
+         <ResponsiveContainer width="100%" height={200}>
+         <BarChart width={450} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <Legend verticalAlign="top" height={36} />
@@ -156,12 +156,11 @@ const AdminChart = (props) => {
 
       {fbLikeAge && (
         <ResponsiveContainer width="100%" height={200}>
-          <BarChart width={150} height={40} data={data}>
+          <BarChart width={500} height={40} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
             <Bar dataKey="ageList" fill="#23C229" />
           </BarChart>
         </ResponsiveContainer>
@@ -184,7 +183,7 @@ const AdminChart = (props) => {
       )}
 
       {twFollower && (
-        <ResponsiveContainer width={500} height={200}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart width={900} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -245,8 +244,8 @@ const AdminChart = (props) => {
       )}
 
       {youGainLostUser && (
-        <ResponsiveContainer width={600} height={200}>
-          <BarChart width={500} height={300} data={data}>
+        <ResponsiveContainer width="100%" height={200}>
+          <BarChart width={650} height={300} data={data}>
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />
             <YAxis />
@@ -258,7 +257,7 @@ const AdminChart = (props) => {
         </ResponsiveContainer>
       )}
       {youEngGainLostUser && (
-        <ResponsiveContainer width={300} height={200}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart width={500} height={300} data={data}>
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />
@@ -369,7 +368,7 @@ const AdminChart = (props) => {
         </PieChart>
       )}
       {linkAudienceGrowth && (
-        <ResponsiveContainer width={450} height={200}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart width={450} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -414,7 +413,7 @@ const AdminChart = (props) => {
         </ResponsiveContainer>
       )}
       {linkSocialAction && (
-        <ResponsiveContainer width={300} height={200}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart width={450} height={300} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -440,7 +439,7 @@ const AdminChart = (props) => {
         </ResponsiveContainer>
       )}
       {insNewFollower && (
-        <ResponsiveContainer width={600} height={200}>
+        <ResponsiveContainer width="100%" height={200}>
           <BarChart width={500} height={300} data={data}>
             {/* <CartesianGrid strokeDasharray="3 3" /> */}
             <XAxis dataKey="name" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DashboardLayout from "../components/DashboardLayout";
 import * as VscIcons from "react-icons/vsc";
 import * as FaIcons from "react-icons/fa";
@@ -6,11 +6,21 @@ import * as BsIcons from "react-icons/bs";
 import * as IoIcons from "react-icons/io";
 import Search from "../../../components/Search";
 import { orderData } from "../components/tableData";
- 
-
-
+import DashboardModal from "../components/DashboardModal";
 
 const Order = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [viewCalender, setViewCalender] = useState("");
+
+  const handleOpen = (item) => {
+    setShowModal(true);
+    setViewCalender(item);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <DashboardLayout>
       <div>
@@ -19,38 +29,29 @@ const Order = () => {
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div></div>
             <div
-              style={{
-                color: "#fff",
-                display: "flex",
-                textAlign: "center",
-                marginRight: "50px",
-              }}
-            >
-              {" "}
-              <p
-                style={{
-                  background: "#3578e5",
-                  fontSize: "12px",
-                  padding: "2px",
-                }}
-              >
-                <FaIcons.FaCalendarAlt />
-                last 30 days
-              </p>
-              <p
-                style={{
-                  background: "#3578e5",
-                  width: "30px",
-                  margin: "0px 10px",
-                  padding: "2px",
-                }}
-              >
-                <VscIcons.VscSettings />
-              </p>
-              <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
-                <BsIcons.BsFillShareFill />
-              </p>
-            </div>
+          onClick={() => handleOpen("viewCalender")}
+         
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
           </div>
         </div>
         <div
@@ -88,39 +89,48 @@ const Order = () => {
           </div>
         </div>
       </div>
-      <div>
-  
+
       <div className=" table">
-          <div className="tableHeader">
-            <div className="listName">Order Id</div>
-            <div className="listName">Name</div>
-            <div className="listName">Plan Name</div>
-            <div className="listName">Price</div>
-            <div className="listName">Status</div>
-            <div className="listName">Payment Type</div>
-            <div className="listName">Date</div>
-          </div>
+        <table>
+          <tr className="tableHeader">
+            <th className="listName">Order Id</th>
+            <th className="listName">Name</th>
+            <th className="listName">Plan Name</th>
+            <th className="listName">Price</th>
+            <th className="listName">Status</th>
+            <th className="listName">Payment Type</th>
+            <th className="listName">Date</th>
+          </tr>
           {orderData.map((item, index) => {
             return (
-            <div key={index} className="tableBody">
-            <div className="listName">{item.id}</div>
-            <div className="listName">{item.name}</div>
-            <div className="listName">{item.plan}</div>
-            <div className="listName">{item.price}</div>
-            <div className="listName">{item.status}</div>
-            <div className="listName">{item.payment}</div>
-            <div className="listName">{item.date}</div>
-              </div>
+              <tr key={index} className="tableBody">
+                <th className="listName">{item.id}</th>
+                <th className="listName">{item.name}</th>
+                <th className="listName">{item.plan}</th>
+                <th className="listName">{item.price}</th>
+                <th className="listName">{item.status}</th>
+                <th className="listName">{item.payment}</th>
+                <th className="listName">{item.date}</th>
+              </tr>
             );
           })}
-          <div className="pagination">
-          <p className="paginationBtn"><IoIcons.IoIosArrowBack /></p>
-          <p className="paginationBtn"><IoIcons.IoIosArrowForward /></p>
-          </div>
-        </div>
+        </table>
       </div>
-     
-  </DashboardLayout>
+      <div className="pagination">
+        <p className="paginationBtn">
+          <IoIcons.IoIosArrowBack />
+        </p>
+        <p className="paginationBtn">
+          <IoIcons.IoIosArrowForward />
+        </p>
+      </div>
+
+      <DashboardModal
+        open={showModal}
+        onclose={handleClose}
+        viewCalender={viewCalender}
+      />
+    </DashboardLayout>
   );
 };
 

@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import { useLocation } from "react-router-dom";
 import "./Header.css";
-import Logo from '../../../assets/images/logo.png'
+import Logo from "../../../assets/images/logo.png";
 import Search from "../../../components/Search";
 import DashboardModal from "./DashboardModal";
 import { FaPlus } from "react-icons/fa";
-
 
 const Header = () => {
   const [showModal, setShowModal] = useState(false);
@@ -29,7 +28,11 @@ const Header = () => {
         pathName === "/admin/plans" ||
         pathName === "/admin/users") && (
         <div className="headerStyle">
-          <Search />
+          <div
+            className="search"
+          >
+            <Search />
+          </div>
           <div className="headerTag">
             <Avatar
               alt="AD"
@@ -63,24 +66,29 @@ const Header = () => {
         <div>
           <hr />
           <div className="headerStyle">
-            
             <div>
               <h1>Campaigns</h1>
             </div>
             <Search />
             <div
-              onClick={() => handleOpen("createCampaign")} style={{
-                width: '150px', borderRadius: '10px', padding: '10px', background: '#3578e5', color: '#fff',
-                marginRight: '20px'
+              onClick={() => handleOpen("createCampaign")}
+              style={{
+                width: "150px",
+                borderRadius: "10px",
+                padding: "10px",
+                background: "#3578e5",
+                color: "#fff",
+                marginRight: "20px",
               }}
-              
             >
-              <p><FaPlus /> Create Campaign</p>
+              <p>
+                <FaPlus /> Create Campaign
+              </p>
             </div>
           </div>
         </div>
       )}
-     
+
       <DashboardModal
         open={showModal}
         onclose={handleClose}

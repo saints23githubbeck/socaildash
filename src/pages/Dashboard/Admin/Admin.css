@@ -1,18 +1,19 @@
 .dashboardTop {
   background: #e4edfc;
   border-radius: 20px;
-  width: 1000px;
   height: 150px;
   display: flex;
   justify-content: space-between;
   margin: 25px auto;
 }
+.dashboardGreeting {
+  margin: auto auto auto 50px;
+}
 .dashboardCount {
   display: flex;
   justify-content: space-around;
-  margin: "50px 0px";
-  width: "1000px";
-  height: "150px";
+  margin: 50px 0px;
+  height: 150px;
 }
 .img {
   width: 120px;
@@ -96,6 +97,14 @@ h2 {
   padding-top: 20px;
   margin: 0px 20px;
 }
+.userAddedList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.planCardList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 .planCard {
   width: 220px;
   height: 250px;
@@ -159,6 +168,14 @@ h2 {
   text-align: center;
   color: #666666;
 }
+.show {
+  color: #fff;
+  display: flex;
+  text-align: center;
+}
+.show1 {
+  display: none;
+}
 .siteSetting {
   display: flex;
   justify-content: space-around;
@@ -171,18 +188,18 @@ h2 {
   margin: 20px;
   padding: 20px 0px;
 }
-.siteFormInputBtn {
-  text-align: center;
+/* .siteFormInputBtn {
   padding: 10px 0px;
   width: 150px;
   border-radius: 10px 15px 15px 10px;
-  color: #fff;
   margin: 10px 25px;
-}
+} */
 .siteFormInputBtn {
+  text-align: center;
   cursor: pointer;
+  color: #fff;
   background: #3578e5;
-  padding: 10px 20px;
+  padding: 10px 0px;
   width: 150px;
   height: 40px;
   box-sizing: border-box;
@@ -225,28 +242,32 @@ h2 {
   text-align: center;
   color: #0a2147;
 }
+.table {
+  overflow-x: auto;
+  width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 .tableHeader {
   background: #3578e5;
   color: #fff;
-  display: flex;
-  justify-content: space-around;
+  text-align: left;
   text-align: center;
+  display: flex;
 }
 .tableBody {
-  display: flex;
-  justify-content: space-around;
   text-align: center;
   border-bottom: 1px solid gray;
-}
-.tableHeader .listName {
-  width: 150px;
-  text-align: center;
-  padding: 5px 0px;
+  display: flex;
 }
 .listName {
   text-align: center;
   width: 150px;
-  padding: 20px 0px 10px 0px;
+  padding: 5px 0px;
 }
 .pagination {
   display: flex;
@@ -266,13 +287,13 @@ h2 {
   cursor: pointer;
   height: 30px;
 }
-.tableBody > .siteFormInput > input {
+/* .tableBody > .siteFormInput > input {
   width: 500px;
   height: 52px;
   border: 2px solid #3578e5;
   box-sizing: border-box;
   border-radius: 10px;
-}
+} */
 .paymentSetting {
   display: grid;
   grid-template-columns: 1fr 9fr 2fr;
@@ -289,13 +310,174 @@ h2 {
 .paymentSetting > p {
   cursor: pointer;
 }
-
+.emailSettings {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 20px 10px;
+}
+.emailSettingsBtn {
+  display: flex;
+  justify-content: space-between;
+}
+.sitePayment {
+  display: flex;
+  margin: 20px 0px;
+  padding: 20px;
+  justify-content: space-between;
+}
+.sitePayment > .siteFormInput > input {
+  width: 500px;
+  height: 52px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.payCollaspeDetail {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.campaignPage {
+  text-align: center;
+  margin-top: 50px;
+}
+.free {
+  text-align: center;
+  padding: auto;
+  height: 300px;
+}
+.freeMove {
+  text-align: center;
+  height: 80px;
+  padding: auto;
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-.children{display: none;}
+  .show {
+    display: none;
+  }
+  .show1 {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+  }
 }
 
 @media screen and (min-width: 441px) and (max-width: 768px) {
-.children{display: none;}
+  .dashboardTop {
+    border-radius: 20px;
+    width: 100%;
+    height: 150px;
+    margin: 20px 0px;
+  }
+  .img1 {
+    display: none;
+  }
+  .dashboardCount {
+    display: inline-block;
+    margin: auto;
+    width: 75vw;
+  }
+  .mainCard {
+    width: 100%;
+    padding: 5px 0px;
+    height: 110px;
+    margin: 10px 0px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .dashboardGreeting {
+    margin: auto auto auto 10px;
+  }
+  .userAddedList {
+    display: inline-grid;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .planCardList {
+    display: inline-grid;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr;
+  }
+  .siteSetting {
+    display: inline-block;
+    justify-content: space-around;
+    padding: 10px 0px;
+    margin-left: -10px;
+  }
+  .emailSettings {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 10px;
+  }
+  .emailSettingsBtn {
+    display: flex;
+    justify-content: space-around;
+  }
+  .emailSettingsBtn > .siteFormInputBtn {
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    background: #3578e5;
+    padding: 10px 0px;
+    width: 110px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  .sitePayment {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .sitePayment > .siteFormInput > input {
+    width: auto;
+    height: 52px;
+    border: 2px solid #3578e5;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  .paymentSetting {
+    display: grid;
+    grid-template-columns: 0.3fr 2fr 0.5fr;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2-5);
+  }
+  .payCollaspeDetail {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .campaignPage {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .free {
+    text-align: center;
+    padding: auto;
+  }
+  .freeMove {
+    text-align: center;
+    height: 150px;
+    width: 90%;
+    padding: 20px;
+  }
+  .show {
+    display: none;
+  }
+  .show1 {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+  }
 }
 
 @media only screen and (max-width: 440px) {
@@ -303,20 +485,115 @@ h2 {
     border-radius: 20px;
     width: 100%;
     height: 150px;
-    display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
+    margin: 20px 0px;
   }
+
   .img,
   .img1 {
     display: none;
   }
   .dashboardCount {
-    display: block;
-    justify-content: center;
+    display: inline-block;
+    margin: auto;
+    width: 75vw;
+  }
+  .mainCard {
+    width: 100%;
+    padding: 5px 0px;
+    height: 110px;
+    margin: 10px 0px;
+    border-radius: 10px;
     align-items: center;
-    margin: "50px auto";
-    width: "1000px";
-    height: "150px";
+    justify-content: center;
+    text-align: center;
+  }
+  .dashboardGreeting {
+    margin: auto auto auto 10px;
+  }
+  .userAddedList {
+    display: inline-block;
+    width: 80vw;
+  }
+  .planCardList {
+    display: block;
+    width: 80vw;
+  }
+  .siteSetting {
+    display: inline-block;
+    justify-content: space-around;
+    padding: 10px 0px;
+    margin-left: -10px;
+  }
+  .emailSettings {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 20px 10px;
+  }
+  .emailSettingsBtn {
+    display: flex;
+    justify-content: space-around;
+  }
+  .emailSettingsBtn > .siteFormInputBtn {
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    background: #3578e5;
+    padding: 10px 0px;
+    width: 110px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  .sitePayment {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    padding: 20px;
+    justify-content: space-between;
+  }
+  .sitePayment > .siteFormInput > input {
+    width: auto;
+    height: 52px;
+    border: 2px solid #3578e5;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  .paymentSetting {
+    display: grid;
+    grid-template-columns: 0.3fr 2fr 0.5fr;
+    justify-content: space-around;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2-5);
+  }
+  .payCollaspeDetail {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .campaignPage {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .free {
+    text-align: center;
+    padding: auto;
+  }
+  .freeMove {
+    text-align: center;
+    height: 80px;
+    width: 280px;
+    padding: 8px;
+  }
+  .show {
+    display: none;
+  }
+  .show1 {
+    color: #fff;
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
   }
 }

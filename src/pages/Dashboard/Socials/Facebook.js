@@ -19,7 +19,7 @@ import DashboardModal from "../components/DashboardModal";
 
 const ChartCard = (props) => {
   const { width, topChartName, topChartNumber, chartName, sideContent } = props;
-  
+
   return (
     <div
       className="chartCard"
@@ -62,7 +62,6 @@ const Facebook = () => {
 
   const handleClose = () => {
     setShowModal(false);
-
   };
   return (
     <DashboardLayout>
@@ -109,9 +108,9 @@ const Facebook = () => {
             Post
           </p>
         </div>
-        <div
+         <div className="show"
           onClick={() => handleOpen("viewCalender")}
-          style={{ color: "#fff", display: "flex", textAlign: "center" }}
+         
         >
           <p
             style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
@@ -132,15 +131,38 @@ const Facebook = () => {
           <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
             <BsIcons.BsFillShareFill />
           </p>
-        </div>
+        </div> 
       </div>
       <div className="componentBody">
+      <div className="show1"
+          onClick={() => handleOpen("viewCalender")}
+        >
+          <p
+            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+          >
+            <FaIcons.FaCalendarAlt />
+            last 30 days
+          </p>
+          <p
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              margin: "0px 10px",
+              padding: "2px",
+            }}
+          >
+            <VscIcons.VscSettings />
+          </p>
+          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+            <BsIcons.BsFillShareFill />
+          </p>
+        </div> 
         {step === 1 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div className="chartContainer">
               <div
                 style={{
-                  width: "200px",
+                  width: "200px", 
                   height: "200px",
                   border: "1px solid gray",
                   margin: "10px 20px",
@@ -159,13 +181,12 @@ const Facebook = () => {
               </div>
 
               <ChartCard
-                width={200}
+                // width={200}
                 topChartName={"Organic VS paid Likes"}
                 chartName={
                   <AdminChart fbOrganicLikes={true} data={fbOrganicLikesData} />
                 }
               />
-
               <ChartCard
                 width={450}
                 topChartName={"Audience Growth"}
@@ -178,9 +199,9 @@ const Facebook = () => {
               />
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div className="chartContainer">
               <ChartCard
-                width={650}
+                width={450}
                 topChartName={"Age"}
                 topChartNumber={""}
                 chartName={<AdminChart fbLikeAge={true} data={fbLikeAgeData} />}
@@ -199,7 +220,7 @@ const Facebook = () => {
         )}
         {step === 2 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <ChartCard
                 width={425}
                 topChartName={"Audience Engagement"}
@@ -223,9 +244,9 @@ const Facebook = () => {
                 sideContent={""}
               />
             </div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <ChartCard
-                width={650}
+                width={450}
                 topChartName={"Age"}
                 topChartNumber={""}
                 chartName={<AdminChart fbLikeAge={true} data={fbLikeAgeData} />}
@@ -244,7 +265,7 @@ const Facebook = () => {
         )}
         {step === 3 && (
           <div>
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <ChartCard
                 width={450}
                 topChartName={"Total Reach"}
@@ -278,9 +299,9 @@ const Facebook = () => {
               />
             </div>
 
-            <div style={{ display: "flex" }}>
+            <div  className="chartContainer">
               <ChartCard
-                width={650}
+                width={500}
                 topChartName={"Age"}
                 topChartNumber={""}
                 chartName={<AdminChart fbLikeAge={true} data={fbLikeAgeData} />}
@@ -297,9 +318,9 @@ const Facebook = () => {
           </div>
         )}
         {step === 4 && (
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+          <div className="post">
             <div
-              style={{ background: "#fff", width: "350px", padding: "15px" }}
+              style={{ background: "#fff", width: "280px", padding: "15px", margin:'10px 0px'}}
             >
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <Avatar />
@@ -310,7 +331,7 @@ const Facebook = () => {
                 <p>...</p>
               </div>
               <h5>The world can be a better Place</h5>
-              <img src={Image1} alt="post" />
+              <img src={Image1} alt="post"  width={'280px'} height={'150px'}/>
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <h6>20 likes</h6>
                 <h6>10 comment</h6>
@@ -318,7 +339,7 @@ const Facebook = () => {
               </div>
             </div>
             <div
-              style={{ background: "#fff", width: "350px", padding: "15px" }}
+              style={{ background: "#fff", width: "280px", padding: "15px" }}
             >
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <Avatar />
@@ -329,7 +350,7 @@ const Facebook = () => {
                 <p>...</p>
               </div>
               <h5>The world can be a better Place</h5>
-              <img src={Image2} alt="post" />
+              <img src={Image2} alt="post" width={'280px'} height={'150px'} />
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <h6>20 likes</h6>
                 <h6>10 comment</h6>

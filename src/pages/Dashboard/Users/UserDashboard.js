@@ -3,12 +3,9 @@ import DashboardLayout from "../components/DashboardLayout";
 import DashboardSvg from "../components/DashboardSvg";
 
 const UserDashboard = () => {
- 
-
   return (
     <DashboardLayout>
-      
-      <div style={{alignItems:'center', textAlign:'center', marginTop:'80px', justifyContent:'center'}}>
+      <div className="campaignPage" >
         <createCampaignIcon />
         <createCampaignText />
       </div>
