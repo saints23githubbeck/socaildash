@@ -1,0 +1,160 @@
+.sidebarHeader{
+  display: flex;
+  align-items: center;
+}
+.sidebarLogo {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+.sidebarLogo > h1{
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 17.3082px;
+  line-height: 0px;
+  color: #FFFFFF;
+  padding-left: 30px ;
+  padding-right: 10px;
+
+}
+.sideBar{
+  width: 100px;
+}
+.sideBarSubMenu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.navBar {
+    height: 60px;
+    width: 225px;
+    display: flex;
+    margin-right: 15px;
+    margin-left: 40px;
+    align-items: center;
+  }
+  .navMenu {
+    background-color: #3578e5;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 850ms;
+    margin-top: 0px;
+    z-index: 99;
+  }
+  .navMenuClose {
+    background-color: #3578e5;
+    width: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 850ms;
+    margin-top: 0px;
+  }
+  .iconText{
+    display: none;
+  }
+  .navMenu .active {
+    left: 30;
+    transition: 350ms;
+  }
+  .navText {
+    display: flex;
+    justify-content: start;
+    padding: 2px 0px;
+    list-style: none;
+    height: 25px;
+  }
+    span {
+    margin-left: 18px;
+  }
+
+  .menuBars {
+    font-size: 25px;
+    background: none;
+    color: #fff;
+  } 
+   
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+
+}
+    
+@media screen and (min-width: 441px) and (max-width: 768px) {
+.navMenu {
+  background-color: #3578e5;
+  width: 180px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: 850ms;
+  margin-top: 0px;
+  z-index: 99;
+}
+.navMenuClose {
+  background-color: #3578e5;
+  width: 70px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  transition: 850ms;
+  margin-top: 0px;
+}
+.sideBarSubMenu{
+  display: flex;
+  flex-direction: column;
+  margin-left: -10px;
+}
+}
+
+    
+@media only screen and (max-width: 440px) {
+  
+  .sideBarSubMenu{
+      display: flex;
+      flex-direction: column;
+      margin-left: -20px;
+  }
+  .navMenu {
+    background-color: #3578e5;
+    width: 180px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 850ms;
+    margin-top: 0px;
+    z-index: 99;
+  }
+  .navMenuClose {
+    background-color: #3578e5;
+    width: 70px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    transition: 850ms;
+    margin-top: 0px;
+  }
+  .navBar {
+    height: 60px;
+    width: 225px;
+    display: flex;
+    margin-right: 15px;
+    margin-left: 15px;
+    align-items: center;
+  }
+  .sidebarLogo > h1{
+   display: none;
+  }
+  .sidebarLogo {
+    display: flex;
+    align-items: center;
+    margin-left: 25px; 
+  }
+}

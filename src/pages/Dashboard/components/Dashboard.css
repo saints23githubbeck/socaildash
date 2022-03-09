@@ -1,0 +1,405 @@
+.dashboardLayout {
+  display: flex;
+}
+
+.header {
+  background-color: #fff;
+}
+.children {
+  margin-top: 70px;
+  margin-left: 70px;
+  padding: 15px;
+  background: #f5f5f5;
+  width: 100vw;
+  height: 100vh;
+}
+.mainChild {
+  padding: auto;
+}
+.addNewUser {
+  width: 450px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.addNewPlan {
+  width: 600px;
+  height: 500px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+.planFormInput > input {
+  padding-left: 15px;
+  width: 250px;
+  height: 40px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 6px 0px;
+}
+.planFormInput > textarea {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 520px;
+  height: 80px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 6px 0px;
+}
+.addNewPlan .planFormInput {
+  margin: 10px 10px;
+}
+.headerLogo > h1 {
+  color: #3578e5;
+  font-size: 18px;
+}
+
+.addUserBody {
+  margin: 30px;
+}
+.addUserBody input {
+  padding-left: 30px;
+  width: 350px;
+  height: 50px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.addUserBody .formInput {
+  margin: 20px 0px;
+}
+.addUserTop {
+  margin: 25px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.headerFrame {
+  display: flex;
+  top: 0px;
+  left: 100px;
+  background-color: #fff;
+  padding: 10px 30px;
+  height: 60px;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  flex: 11;
+}
+.headerList {
+  display: flex;
+  justify-content: space-around;
+}
+.headerList > p {
+  margin: 0px 20px;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+.componentBody {
+  width: auto;
+  height: auto;
+  padding-top: 50px;
+}
+
+.createCampaign {
+  /* width: 700px;
+height: 600px; */
+  background: #ffffff;
+}
+.createCampaign > div > h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  margin: 10px;
+}
+.createCampaign > div > p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 20px;
+  color: #000000;
+  text-align: center;
+  margin: 10px;
+}
+.createCampaignForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.createFormInput {
+  margin: 25px 0px;
+}
+.createFormInput > p {
+  margin-left: 25px;
+}
+.createFormInput > input {
+  cursor: pointer;
+  padding: 10px 20px;
+  width: 250px;
+  height: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin: 10px 20px;
+  border: 1px solid grey;
+}
+.createBtn {
+  width: 120px;
+  height: 35px;
+  background: #3578e5;
+  border-radius: 5px;
+  margin: 25px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.twitterFeed {
+  width: 250px;
+  height: 350px;
+  border: 1px solid #666666;
+  box-sizing: border-box;
+}
+.feedText {
+  margin: auto;
+  padding: 60px 0px;
+  height: 113px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.adsCard {
+  padding: 10px;
+  width: 180px;
+  height: 120px;
+  border: 1px solid #666666;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.adsCard > h2 {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.chartContainer {
+  display: flex;
+}
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.integrationCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.socialCard {
+  text-align: center;
+  padding: 15px 0px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 200px;
+  height: 120px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .children {
+    margin-top: 50px;
+    margin-left: 70px;
+    padding: 25px;
+    background: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+  }
+  .headerFrame {
+    display: flex;
+    top: 0px;
+    left: 100px;
+    background-color: #ffffff;
+    padding: 10px 30px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    flex: 11;
+  }
+  .headerList {
+    display: flex;
+    justify-content: center;
+    /* margin-left: 30px; */
+  }
+  .headerList > p {
+    /* margin: 0px 30px; */
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+
+}
+
+@media screen and (min-width: 441px) and (max-width: 768px) {
+  .children {
+    margin-top: 80px;
+    margin-left: 20px;
+    padding: 15px;
+    background: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+  }
+  .headerFrame {
+    display: flex;
+    top: 0px;
+    left: 70px;
+    background-color: #ffffff;
+    padding: 10px;
+    height: 60px;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    flex: 11;
+  }
+  .headerFrame > div > h1 {
+    display: none;
+  }
+  .headerList {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+  }
+  .headerList > p {
+    margin: 0px 5px;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+  .integrationCard {
+    width: 100%;
+    margin-left: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .socialCard {
+    text-align: center;
+    padding: 30px 0px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin-right: 5px;
+  }
+  tr:nth-child(even) {
+    background-color: rgb(165, 160, 160);
+  }
+  .chartContainer {
+    display: block;
+    width: 70vw;
+  }
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .children {
+    margin-top: 50px;
+    margin-left: 70px;
+    padding: 15px;
+    background: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+  }
+  .headerFrame {
+    display: flex;
+    top: 0px;
+    left: 70px;
+    background-color: #ffffff;
+    padding: 10px;
+    height: 60px;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    flex: 11;
+  }
+  .headerFrame > div > h1 {
+    display: none;
+  }
+  .headerList {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+  }
+  .headerList > p {
+    margin: 0px 5px;
+    cursor: pointer;
+    padding-bottom: 5px;
+  }
+  .integrationCard {
+    width: 100%;
+    margin-left: -60px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .socialCard {
+    text-align: center;
+    padding: 30px 0px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    box-sizing: border-box;
+    background: #ffffff;
+    margin-right: 5px;
+  }
+  tr:nth-child(even) {
+    background-color: rgb(165, 160, 160);
+  }
+  .chartContainer {
+    display: block;
+    width: 100vw;
+  }
+  .cardContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
