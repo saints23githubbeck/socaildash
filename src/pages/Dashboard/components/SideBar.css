@@ -27,7 +27,7 @@
     margin-left: 20px;
 }
 .navBar {
-    height: 60px;
+    height: 50px;
     width: 225px;
     display: flex;
     margin-right: 15px;
@@ -67,7 +67,7 @@
     justify-content: start;
     padding: 2px 0px;
     list-style: none;
-    height: 25px;
+    height: 20px;
   }
     span {
     margin-left: 18px;

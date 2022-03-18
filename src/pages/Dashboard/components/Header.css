@@ -1,15 +1,16 @@
+
 .headerStyle {
   display: flex;
   top: 0px;
   left: 100px;
   background-color: #fff;
   padding: 10px 30px;
-  height: 60px;
+  height: 50px;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   z-index: 1;
-  width: 100vw;
+  width: 90%;
   flex: 11;
 }
 
@@ -20,7 +21,7 @@
 
 .headerTag {
   padding-left: 10px;
-  margin-right: 150px;
+  margin-right: 20px;
   width: 100px;
   height: 30px;
   border-radius: 5px;

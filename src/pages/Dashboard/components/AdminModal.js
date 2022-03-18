@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 
-const AdminModal = () => {
-    const { open, onclose, addUser, addAdmin, managePassword, edit } = props;
+const AdminModal = (props) => {
+    const { open, onclose, addUser, addAdmin, managePassword, editProfile, logOut } = props;
 
   const [name, setName] = useState("");
 
@@ -15,7 +15,7 @@ const AdminModal = () => {
 
   return (
 <Dialog open={open} onClose={onclose}>
-      {addAdmin && (
+      {addAdmin ==="addAdmin" && (
         <div className="addAdminModal">
           <div className="modalHead">
             <h3>Admin Form</h3>
@@ -82,7 +82,7 @@ const AdminModal = () => {
           </Form>
         </div>
       )}
-     
+           
 </Dialog>
   )
 }

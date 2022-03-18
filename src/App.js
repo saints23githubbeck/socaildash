@@ -26,6 +26,7 @@ import {
   Youtube,
   YoutubeAds,
 } from "./pages";
+import AdminProfile from './pages/Dashboard/Admin/Components/AdminProfile';
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route exact path="/socials/linkedin" element={<Linkedin />} />
         <Route exact path="/socials/youtube" element={<Youtube />} />
         <Route exact path="/integration" element={<Integration />} />
+        <Route exact path="/admin/adminprofile" element={<AdminProfile />} />
       </Routes>
     </BrowserRouter>
   );
