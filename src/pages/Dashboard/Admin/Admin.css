@@ -189,12 +189,7 @@ h2 {
   margin: 20px;
   padding: 20px 0px;
 }
-/* .siteFormInputBtn {
-  padding: 10px 0px;
-  width: 150px;
-  border-radius: 10px 15px 15px 10px;
-  margin: 10px 25px;
-} */
+
 .siteFormInputBtn {
   text-align: center;
   cursor: pointer;
@@ -414,17 +409,17 @@ justify-content: center;
   width: 60px;
   height: 30px;
   font-size: 12px;
-  border-radius: 1px solid gray;
-  background-color: #f55;
+  border-radius: 5px;
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: auto;
+  padding: 5px;
+  color: #fff;
+  
 }
 .switchContainer{
   display: grid;
   grid-template-columns:1fr 1fr 1fr 1fr;
-
 }
 .boxes{
   border-radius: 8px;
@@ -434,8 +429,9 @@ justify-content: center;
 .textBox{
   display: flex;
   justify-content: space-between;
-  margin: 5px 20px;
-  border-bottom: 1px solid grey;
+  padding: 5px 10px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 .textDetails{
@@ -451,8 +447,8 @@ justify-content: center;
 }
 
 .h3Space{
-  width: 150px;
-  margin-right:  20px;
+ width: 60.5%;
+ margin-right:  20px;
 }
 
 
@@ -466,6 +462,10 @@ justify-content: center;
     display: flex;
     text-align: center;
     justify-content: flex-end;
+  }
+  .switchContainer{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
   }
 }
 
@@ -585,6 +585,10 @@ justify-content: center;
     text-align: center;
     justify-content: flex-end;
   }
+  .switchContainer{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 440px) {
@@ -702,5 +706,9 @@ justify-content: center;
     display: flex;
     text-align: center;
     justify-content: flex-end;
+  }
+  .switchContainer{
+    display: grid;
+    grid-template-columns:1fr;
   }
 }

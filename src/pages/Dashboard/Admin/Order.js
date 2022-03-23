@@ -13,6 +13,17 @@ const Order = () => {
   const [viewCalender, setViewCalender] = useState("");
   const [share, setShare] = useState("");
 
+  const  status = (status) =>{
+    switch (status) {
+      case "success":
+        return "green";
+        break;
+      case "failed":
+        return "red";
+        break;
+      default:
+        return "grey";
+    }}
   const handleOpen = (item) => {
     setShowModal(true);
     setViewCalender(item);
@@ -74,20 +85,9 @@ const Order = () => {
             alignItems: "center",
           }}
         >
-          <div
-            style={{
-              width: "150px",
-              height: "25px",
-              border: "1px solid #3578E5",
-              boxSizing: "border-box",
-              borderRadius: "50px",
-              textAlign: "center",
-              padding: "2px 10px",
-              color: "#3578E5",
-            }}
-          >
-            Show Entries
-          </div>
+    
+            
+          
           <div
             style={{
               width: "300px",
@@ -103,27 +103,27 @@ const Order = () => {
         </div>
       </div>
 
-      <div className=" table">
-        <table>
-          <tr className="tableHeader">
-            <th className="listName">Order Id</th>
-            <th className="listName">Name</th>
-            <th className="listName">Plan Name</th>
-            <th className="listName">Price</th>
-            <th className="listName">Status</th>
-            <th className="listName">Payment Type</th>
-            <th className="listName">Date</th>
+      <div style={{overflowX:'auto'}}> 
+        <table className=" ">
+          <tr>
+            <th className="thead">Order Id</th>
+            <th className="thead">Name</th>
+            <th className="thead">Plan Name</th>
+            <th className="thead">Price</th>
+            <th className="thead">Status</th>
+            <th className="thead">Payment Type</th>
+            <th className="thead">Date</th>
           </tr>
           {orderData.map((item, index) => {
             return (
-              <tr key={index} className="tableBody">
-                <th className="listName">{item.id}</th>
-                <th className="listName">{item.name}</th>
-                <th className="listName">{item.plan}</th>
-                <th className="listName">{item.price}</th>
-                <th className="listName">{item.status}</th>
-                <th className="listName">{item.payment}</th>
-                <th className="listName">{item.date}</th>
+              <tr key={index} className="">
+                <td className="tdata">{item.id}</td>
+                <td className="tdata">{item.name}</td>
+                <td className="tdata">{item.plan}</td>
+                <td className="tdata">{item.price}</td>
+                <td className="tdata" style={{color: status(item.status)}}>{item.status}</td>
+                <td className="tdata" >{item.payment}</td>
+                <td className="tdata">{item.date}</td>
               </tr>
             );
           })}

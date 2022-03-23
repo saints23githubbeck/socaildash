@@ -3,19 +3,27 @@ import DashboardLayout from '../components/DashboardLayout'
 import * as VscIcons from "react-icons/vsc";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
-import * as IoIcons from "react-icons/io";
+import { FaPlus } from "react-icons/fa";
 import Search from "../../../components/Search";
-import { couponData } from "../components/tableData";
+import { BiFilterAlt, BiGridAlt } from "react-icons/bi";
 import DashboardModal from '../components/DashboardModal';
+import { coupon } from './Components/adminData';
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from "react-router-dom";
  
 const Coupons = () => {
   const [showModal, setShowModal] = useState(false);
   const [viewCalender, setViewCalender] = useState("");
+  const [addCoupon, setAddCoupon] = useState("");
   const [share, setShare] = useState("");
+  const navigate = useNavigate();
+
 
   const handleOpen = (item) => {
     setShowModal(true);
     setViewCalender(item);
+    setAddCoupon(item);
     setShare(item);
   };
 
@@ -25,6 +33,22 @@ const Coupons = () => {
   return (
     <DashboardLayout>
         <h1>Coupons</h1>
+        <div
+        onClick={() => handleOpen("addCoupon")}
+        style={{
+          display: "flex",
+          backgroundColor: "blue",
+          width: "80px",
+          fontSize: "16px",
+          borderRadius: "8px",
+          color: "#fff",
+          padding: "5px",
+          margin: "20px 80px 20px auto",
+          cursor: "pointer",
+        }}
+      >
+        <p>Add coupon</p>
+      </div>
         <div>
         <div style={{ display: "flex", justifyContent: "space-between", color:'white' }}>
           <div style={{display:'flex'}} >  <p
@@ -98,44 +122,63 @@ const Coupons = () => {
           <Search />
         </div>
       </div>
-  
-      <div className="table">
-      <table>
-          <tr className="tableHeader">
-            <th className="listName">Name</th>
-            <th className="listName">Code</th>
-            <th className="listName">Discount (%)</th>
-            <th className="listName">Unit</th>
-            <th className="listName">Used</th>
-            <th className="listName">Action</th>
-          </tr>
-          {couponData.map((item, index) => {
-            return (
-            <tr key={index} className="tableBody">
-            <th className="listName">{item.name}</th>
-            <th className="listName">{item.code}</th>
-            <th className="listName">{item.discount}</th>
-            <th className="listName">{item.unit}</th>
-            <th className="listName">{item.used}</th>
-            <th className="listName">
-              <button>v</button>
-              <button>e</button>
-              <button>d</button>
+      <div style={{overflowX:'auto'}}>
+      <table className="">
+          <tr>				
+            <th className="thead ">Name</th>
+            <th className="thead">
+            Percent off
             </th>
+            <th className="thead">
+            Coupon Code
+              <BiFilterAlt className="" />
+            </th>
+            <th className="thead">Duration</th>
+            <th className="thead">
+            Date
+              <BiFilterAlt className="" />
+            </th>
+            <th className="thead tcenter">Actions</th>
+          </tr>
+          {coupon.map((item, index) => {
+            return (
+              <tr key={index} className="">
+                <td className="tdata">
+                  {item.name}
+                </td>
+                <td className="tdata">{item.percent} </td>
+                <td className="tdata">{item.code}</td>
+                <td className="tdata">{item.duration}</td>
+                <td className="tdata">{item.date}</td>
+                <td className="tdata buttonEdit">
+                  <p
+                    className="detailsButton"
+                    onClick={() =>
+                      navigate("/admin/coupon/edit", { state: item })
+                    } style={{backgroundColor:'blue'}}
+                  >
+                    <EditIcon />
+                  </p>
+                  <p
+                    className="detailsButton" style={{backgroundColor:'red'}}
+
+                  >
+                    <DeleteIcon />
+                  </p>
+
+                </td>
               </tr>
             );
           })}
-          <div className="pagination">
-          <p className="paginationBtn"><IoIcons.IoIosArrowBack /></p>
-          <p className="paginationBtn"><IoIcons.IoIosArrowForward /></p>
-          </div>
         </table>
-      </div>
+        </div>
+      
     
       <DashboardModal
         open={showModal}
         onclose={handleClose}
         viewCalender={viewCalender}
+        addCoupon={addCoupon}
         share={share}
       />
     </DashboardLayout>

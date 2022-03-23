@@ -109,6 +109,15 @@
   border-radius: 10px;
   margin: 10px 0px;
 }
+.formInput > select {
+  padding-left: 30px;
+  width: 532px;
+  height: 50px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
 .loginButton {
   width: 532px;
   height: 50px;
