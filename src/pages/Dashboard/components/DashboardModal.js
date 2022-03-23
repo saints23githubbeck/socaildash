@@ -237,6 +237,7 @@ const DashboardModal = (props) => {
           </Form>
         </div>
       )}
+    
       {share === "share" && (
         <div>
           <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><DownloadIcon /> Download PDF</p>

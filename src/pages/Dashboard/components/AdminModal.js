@@ -4,9 +4,19 @@ import { Form } from "react-bootstrap";
 
 
 const AdminModal = (props) => {
-    const { open, onclose, addUser, addAdmin, managePassword, editProfile, logOut } = props;
+  const { open, onClose, item, editUser } = props;
+    // const { open, onclose, addUser, addAdmin, managePassword, editProfile, logOut } = props;
 
   const [name, setName] = useState("");
+  const [upload, setUpload] = useState([]);
+
+
+  const handleUpload = (e) => {
+    const imageUrl=URL.createObjectURL(file);
+    const file = e.target.files;
+    setUpload(file);
+    console.log(imageUrl)
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +25,56 @@ const AdminModal = (props) => {
 
   return (
 <Dialog open={open} onClose={onclose}>
-      {addAdmin ==="addAdmin" && (
+           {editUser === "editUser" && (
+        <div className="kami">
+          <div className="modalHead">
+            <h3>Edit Profile</h3>
+            <p>Edit admin profile</p>
+          </div>
+          <Form onSubmit={handleSubmit}>
+          <div className= 'col-lg-3'>
+          <label htmlFor="logoUpload" >
+            <img src='' alt="socaildash" />
+              <input
+                type="file"
+                id="logoUpload"
+                accept="image/*"
+                onChange={handleUpload}
+                style={{ display: "none" }}
+              />
+          </label>
+        </div>
+            <div className="formInput">
+              <p>Name</p>
+              <input type="text" name="name" placeholder={item.name} />
+              <input type="text" name="name" placeholder="Last Name" />
+            </div>
+            <div className="formInput">
+              <input type="email" name="name" placeholder="email@mail.com" />
+            </div>
+            <div className="formInput">
+              <input
+                type="password"
+                name="password"
+                placeholder="enter Password to comfirm changes"
+              />
+            </div>
+            <div className="formInput">
+              <input type="submit" value="Save" />
+            </div>
+          </Form>
+        </div>
+      )}  
+</Dialog>
+  )
+}
+
+export default AdminModal
+
+
+
+
+{/* {addAdmin ==="addAdmin" && (
         <div className="addAdminModal">
           <div className="modalHead">
             <h3>Admin Form</h3>
@@ -81,10 +140,4 @@ const AdminModal = (props) => {
             </div>
           </Form>
         </div>
-      )}
-           
-</Dialog>
-  )
-}
-
-export default AdminModal
+      )} */}

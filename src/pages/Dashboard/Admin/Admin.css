@@ -243,14 +243,12 @@ h2 {
   text-align: center;
   color: #0a2147;
 }
-.table {
-  overflow-x: auto;
-  width: 100%;
-}
 table {
+  overflow-x: auto;
+  font-family: arial, sans-serif;
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
+   width: 100%; 
   border: 1px solid #ddd;
 }
 .tableHeader {
@@ -288,13 +286,7 @@ table {
   cursor: pointer;
   height: 30px;
 }
-/* .tableBody > .siteFormInput > input {
-  width: 500px;
-  height: 52px;
-  border: 2px solid #3578e5;
-  box-sizing: border-box;
-  border-radius: 10px;
-} */
+
 .paymentSetting {
   display: grid;
   grid-template-columns: 1fr 9fr 2fr;
@@ -351,8 +343,6 @@ table {
   height: 80px;
   padding: auto;
 }
-
-
 .users_heading {
   font-size: 16px;
   display: flex;
@@ -385,6 +375,85 @@ table {
   padding: 10px;
 }
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.userList{
+  display:flex;
+  align-items: center;
+  padding-left: 20px ;
+  text-transform: capitalize;
+}
+.userList > p{
+  margin-left: 10px;
+}
+
+.tdata{
+margin: 5px;
+text-align: left;
+padding: 8px;
+
+}
+.thead{
+  margin: 5px;
+  text-align: left;
+  padding: 8px;
+}
+.tcenter{
+  text-align: center;
+}
+.buttonEdit{
+display: flex;
+text-align: center;
+justify-content: center;
+
+}
+.detailsButton{
+  cursor: pointer;
+  margin: 2px;
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 1px solid gray;
+  background-color: #f55;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: auto;
+}
+.switchContainer{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+
+}
+.boxes{
+  border-radius: 8px;
+  border: 1px solid firebrick;
+  margin: 10px;
+}
+.textBox{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 20px;
+  border-bottom: 1px solid grey;
+
+}
+.textDetails{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px 20px;
+}
+.textDetails > .textIndex{
+  border-bottom: 2px solid #3521b5;
+}
+.messageDetails{
+  width: 60%;
+}
+
+.h3Space{
+  width: 150px;
+  margin-right:  20px;
+}
 
 
 
