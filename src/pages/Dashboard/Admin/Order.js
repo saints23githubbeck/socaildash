@@ -11,10 +11,12 @@ import DashboardModal from "../components/DashboardModal";
 const Order = () => {
   const [showModal, setShowModal] = useState(false);
   const [viewCalender, setViewCalender] = useState("");
+  const [share, setShare] = useState("");
 
   const handleOpen = (item) => {
     setShowModal(true);
     setViewCalender(item);
+    setShare(item);
   };
 
   const handleClose = () => {
@@ -28,12 +30,14 @@ const Order = () => {
         <div>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div></div>
-            <div
-          onClick={() => handleOpen("viewCalender")}
-         
-        >
-          <p
-            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+            <div style={{display:'flex', justifyContent:'flex-end'}}>  <p
+            onClick={() => handleOpen("viewCalender")}
+            style={{
+              background: "#3578e5",
+              fontSize: "12px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
           >
             <FaIcons.FaCalendarAlt />
             last 30 days
@@ -44,11 +48,20 @@ const Order = () => {
               width: "30px",
               margin: "0px 10px",
               padding: "2px",
+              cursor: "pointer",
             }}
           >
             <VscIcons.VscSettings />
           </p>
-          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+          <p
+            onClick={() => handleOpen("share")}
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
+          >
             <BsIcons.BsFillShareFill />
           </p>
         </div> 
@@ -129,6 +142,7 @@ const Order = () => {
         open={showModal}
         onclose={handleClose}
         viewCalender={viewCalender}
+        share={share}
       />
     </DashboardLayout>
   );

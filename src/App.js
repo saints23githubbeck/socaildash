@@ -26,6 +26,11 @@ import {
   Youtube,
   YoutubeAds,
 } from "./pages";
+import AdminProfile from './pages/Dashboard/Admin/Components/AdminProfile';
+import UserView from './pages/Dashboard/Admin/Components/UserView';
+import AddUser from './pages/Dashboard/Admin/Components/AddUser';
+import EditUser from './pages/Dashboard/Admin/Components/EditUser';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -54,6 +59,11 @@ function App() {
         <Route exact path="/socials/linkedin" element={<Linkedin />} />
         <Route exact path="/socials/youtube" element={<Youtube />} />
         <Route exact path="/integration" element={<Integration />} />
+        <Route exact path="/admin/adminprofile" element={<AdminProfile />} />
+        <Route exact path="/admin/user/view" element={<UserView />} />
+        <Route exact path="/admin/user/edit" element={<EditUser />} />
+        <Route exact path="/admin/user/add" element={<AddUser />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

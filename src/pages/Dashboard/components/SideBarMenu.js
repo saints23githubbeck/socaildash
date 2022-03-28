@@ -33,7 +33,7 @@ const SideBarMenu = ({ data, sidebar }) => {
                 style={(isActive) => ({
                   textDecoration: "none",
                   fontSize: "16px",
-                  margin: "3px 0px",
+                  margin: "2px 0px",
                   color: isActive && pathName === item.path ? "black" : "#fff",
                   borderRadius: isActive && pathName === item.path ? "5px" : "",
                 })}

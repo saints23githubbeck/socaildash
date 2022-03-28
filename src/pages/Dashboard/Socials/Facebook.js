@@ -54,10 +54,12 @@ const Facebook = () => {
   const [step, setStep] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [viewCalender, setViewCalender] = useState("");
+  const [share, setShare] = useState("");
 
   const handleOpen = (item) => {
     setShowModal(true);
     setViewCalender(item);
+    setShare(item);
   };
 
   const handleClose = () => {
@@ -108,12 +110,15 @@ const Facebook = () => {
             Post
           </p>
         </div>
-         <div className="show"
-          onClick={() => handleOpen("viewCalender")}
-         
-        >
+        <div className="show">
           <p
-            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+            onClick={() => handleOpen("viewCalender")}
+            style={{
+              background: "#3578e5",
+              fontSize: "12px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
           >
             <FaIcons.FaCalendarAlt />
             last 30 days
@@ -124,21 +129,33 @@ const Facebook = () => {
               width: "30px",
               margin: "0px 10px",
               padding: "2px",
+              cursor: "pointer",
             }}
           >
             <VscIcons.VscSettings />
           </p>
-          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+          <p
+            onClick={() => handleOpen("share")}
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
+          >
             <BsIcons.BsFillShareFill />
           </p>
-        </div> 
+        </div>
       </div>
       <div className="componentBody">
-      <div className="show1"
-          onClick={() => handleOpen("viewCalender")}
-        >
-          <p
-            style={{ background: "#3578e5", fontSize: "12px", padding: "2px" }}
+        <div className="show1" >  <p
+            onClick={() => handleOpen("viewCalender")}
+            style={{
+              background: "#3578e5",
+              fontSize: "12px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
           >
             <FaIcons.FaCalendarAlt />
             last 30 days
@@ -149,20 +166,29 @@ const Facebook = () => {
               width: "30px",
               margin: "0px 10px",
               padding: "2px",
+              cursor: "pointer",
             }}
           >
             <VscIcons.VscSettings />
           </p>
-          <p style={{ background: "#3578e5", width: "30px", padding: "2px" }}>
+          <p
+            onClick={() => handleOpen("share")}
+            style={{
+              background: "#3578e5",
+              width: "30px",
+              padding: "2px",
+              cursor: "pointer",
+            }}
+          >
             <BsIcons.BsFillShareFill />
           </p>
-        </div> 
+        </div>
         {step === 1 && (
           <div>
             <div className="chartContainer">
               <div
                 style={{
-                  width: "200px", 
+                  width: "200px",
                   height: "200px",
                   border: "1px solid gray",
                   margin: "10px 20px",
@@ -220,7 +246,7 @@ const Facebook = () => {
         )}
         {step === 2 && (
           <div>
-            <div  className="chartContainer">
+            <div className="chartContainer">
               <ChartCard
                 width={425}
                 topChartName={"Audience Engagement"}
@@ -244,7 +270,7 @@ const Facebook = () => {
                 sideContent={""}
               />
             </div>
-            <div  className="chartContainer">
+            <div className="chartContainer">
               <ChartCard
                 width={450}
                 topChartName={"Age"}
@@ -265,7 +291,7 @@ const Facebook = () => {
         )}
         {step === 3 && (
           <div>
-            <div  className="chartContainer">
+            <div className="chartContainer">
               <ChartCard
                 width={450}
                 topChartName={"Total Reach"}
@@ -299,7 +325,7 @@ const Facebook = () => {
               />
             </div>
 
-            <div  className="chartContainer">
+            <div className="chartContainer">
               <ChartCard
                 width={500}
                 topChartName={"Age"}
@@ -320,7 +346,12 @@ const Facebook = () => {
         {step === 4 && (
           <div className="post">
             <div
-              style={{ background: "#fff", width: "280px", padding: "15px", margin:'10px 0px'}}
+              style={{
+                background: "#fff",
+                width: "280px",
+                padding: "15px",
+                margin: "10px 0px",
+              }}
             >
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <Avatar />
@@ -331,7 +362,7 @@ const Facebook = () => {
                 <p>...</p>
               </div>
               <h5>The world can be a better Place</h5>
-              <img src={Image1} alt="post"  width={'280px'} height={'150px'}/>
+              <img src={Image1} alt="post" width={"280px"} height={"150px"} />
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <h6>20 likes</h6>
                 <h6>10 comment</h6>
@@ -350,7 +381,7 @@ const Facebook = () => {
                 <p>...</p>
               </div>
               <h5>The world can be a better Place</h5>
-              <img src={Image2} alt="post" width={'280px'} height={'150px'} />
+              <img src={Image2} alt="post" width={"280px"} height={"150px"} />
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <h6>20 likes</h6>
                 <h6>10 comment</h6>
@@ -364,6 +395,7 @@ const Facebook = () => {
         open={showModal}
         onclose={handleClose}
         viewCalender={viewCalender}
+        share={share}
       />
     </DashboardLayout>
   );
