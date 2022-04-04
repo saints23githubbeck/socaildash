@@ -30,7 +30,9 @@ import AdminProfile from './pages/Dashboard/Admin/Components/AdminProfile';
 import UserView from './pages/Dashboard/Admin/Components/UserView';
 import AddUser from './pages/Dashboard/Admin/Components/AddUser';
 import EditUser from './pages/Dashboard/Admin/Components/EditUser';
+import EditPlan from './pages/Dashboard/Admin/Components/EditPlan';
 import NotFound from './components/NotFound';
+import EditCoupon from './pages/Dashboard/Admin/Components/EditCoupon';
 
 function App() {
   return (
@@ -63,6 +65,8 @@ function App() {
         <Route exact path="/admin/user/view" element={<UserView />} />
         <Route exact path="/admin/user/edit" element={<EditUser />} />
         <Route exact path="/admin/user/add" element={<AddUser />} />
+        <Route exact path="/admin/plan/edit" element={<EditPlan/>} />
+        <Route exact path="/admin/coupon/edit" element={<EditCoupon/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

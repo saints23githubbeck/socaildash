@@ -127,24 +127,24 @@ export const SidebarData = [
                 icon: <BsIcons.BsLinkedin />,
                 cName: '.navText',
             },
-            {
-                title: 'Youtube Ads',
-                path: '/ads/youtube',
-                icon: <BsIcons.BsYoutube />,
-                cName: '.navText',
-            },
+            // {
+            //     title: 'Youtube Ads',
+            //     path: '/ads/youtube',
+            //     icon: <BsIcons.BsYoutube />,
+            //     cName: '.navText',
+            // },
             {
                 title: 'Google Ads',
                 path: '/ads/google',
                 icon: <BsIcons.BsGoogle />,
                 cName: '.navText',
             },
-            {
-                title: 'Instagram Ads',
-                path: '/ads/instagram',
-                icon: <BsIcons.BsInstagram />,
-                cName: '.navText',
-            },
+            // {
+            //     title: 'Instagram Ads',
+            //     path: '/ads/instagram',
+            //     icon: <BsIcons.BsInstagram />,
+            //     cName: '.navText',
+            // },
         ]
     },
     {

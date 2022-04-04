@@ -9,8 +9,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import { messageData } from "./Components/adminData";
 import { Avatar } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import UserView from "./Components/UserView";
-import AdminModal from "../components/AdminModal";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
@@ -27,6 +25,31 @@ const User = () => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [managePassword, setManagePassword] = useState("");
+
+  
+  const  status = (status) =>{
+    switch (status) {
+      case "Active":
+        return "green";
+        break;
+      case "Inactive":
+        return "red";
+        break;
+      default:
+        return "grey";
+    }}
+  const  verified = (verified) =>{
+    switch (verified) {
+      case "Verified":
+        return "green";
+        break;
+      case "Unverified":
+        return "red";
+        break;
+      default:
+        return "grey";
+    }}
+
 
 
   const open = Boolean(anchorEl);
@@ -87,21 +110,22 @@ const User = () => {
 
       {/* table and grid section */}
       {activeItemKey === 1 ? (
+         <div style={{overflowX:'auto'}}>
         <table className="">
           <tr>
             <th className="thead tcenter">Name</th>
             <th className="thead">
               Email
-              <BiFilterAlt className="thead" />
+              <BiFilterAlt className="thead"  onClick={() => ('')} />
             </th>
             <th className="thead">
               Verified
-              <BiFilterAlt className="" />
+              <BiFilterAlt className=""  onClick={() => ('')}/>
             </th>
             <th className="thead">Status</th>
             <th className="thead">
               Role
-              <BiFilterAlt className="" />
+              <BiFilterAlt className=""  onClick={() => ('')}/>
             </th>
             <th className="thead">Date</th>
             <th className="thead tcenter">Actions</th>
@@ -114,8 +138,8 @@ const User = () => {
                   <p className="">{item.name}</p>
                 </td>
                 <td className="tdata">{item.email} </td>
-                <td className="tdata">{item.verified}</td>
-                <td className="tdata">{item.status}</td>
+                <td className="tdata" style={{color: verified(item.verified)}}>{item.verified}</td>
+                <td className="tdata" style={{color: status(item.status)}}>{item.status}</td>
                 <td className="tdata">{item.role}</td>
                 <td className="tdata">{item.date}</td>
                 <td className="tdata buttonEdit">
@@ -123,7 +147,7 @@ const User = () => {
                     className="detailsButton"
                     onClick={() =>
                       navigate("/admin/user/view", { state: item })
-                    }
+                    } style={{backgroundColor:'green'}}
                   >
                     <SearchIcon /> View
                   </p>
@@ -132,7 +156,7 @@ const User = () => {
                     className="detailsButton"
                     onClick={() =>
                       navigate("/admin/user/edit", { state: item })
-                    }
+                    } style={{backgroundColor:'blue'}}
                   >
                     <EditIcon /> Edit
                   </p>
@@ -142,7 +166,7 @@ const User = () => {
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
-              className="detailsButton">
+              className="detailsButton" style={{backgroundColor:'red'}}> 
               More <ArrowDropDownIcon />
          
             </Button>
@@ -169,6 +193,7 @@ const User = () => {
             );
           })}
         </table>
+        </div>
       ) : (
         <div className="switchContainer">
           {messageData.map((item, index) => {

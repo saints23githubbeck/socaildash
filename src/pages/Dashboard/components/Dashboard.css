@@ -63,8 +63,22 @@ text-align: center;
 
 .addUserBody {
   margin: 30px;
+  align-items: center;
+  text-align: center;
 }
 .addUserBody input {
+  padding-left: 30px;
+  width: 350px;
+  height: 50px;
+  border: 2px solid #3578e5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+.addUserBody  p {
+  margin-left:80px ;
+}
+.addUserBody select {
   padding-left: 30px;
   width: 350px;
   height: 50px;
@@ -223,6 +237,7 @@ height: 600px; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .socialCard {
+  cursor: pointer;
   text-align: center;
   padding: 15px 0px;
   margin-bottom: 20px;
@@ -233,7 +248,12 @@ height: 600px; */
   box-sizing: border-box;
   background: #ffffff;
 }
-
+.integrationmodal{
+  width: 250px; 
+  text-align: center;
+  padding: 100px;
+  background-color: #f545;
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .children {
     margin-top: 50px;
@@ -347,7 +367,7 @@ height: 600px; */
     margin-left: 70px;
     padding: 15px;
     background: #f5f5f5;
-    width: 100vw;
+    width: 90vw;
     height: 100vh;
   }
   .headerFrame {
@@ -409,5 +429,15 @@ height: 600px; */
   .post {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  .addNewUser {
+    width: 100%;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 20px;
+  }
+  .dashboardLayout {
+    display: flex;
+    width: 100vw;
   }
 }

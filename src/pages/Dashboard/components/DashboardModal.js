@@ -7,14 +7,15 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Box from "@mui/material/Box";
 import { Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import DownloadIcon from '@mui/icons-material/Download';
-import SendIcon from '@mui/icons-material/Send';
-import SwapCallsIcon from '@mui/icons-material/SwapCalls';
-import AddIcon from '@mui/icons-material/Add';
-import SlideshowIcon from '@mui/icons-material/Slideshow';
+import DownloadIcon from "@mui/icons-material/Download";
+import SendIcon from "@mui/icons-material/Send";
+import SwapCallsIcon from "@mui/icons-material/SwapCalls";
+import AddIcon from "@mui/icons-material/Add";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
 
 const DashboardModal = (props) => {
   const {
+    addCoupon,
     open,
     onclose,
     addPlan,
@@ -23,7 +24,8 @@ const DashboardModal = (props) => {
     viewCalender,
     logOut,
     managePassword,
-    editProfile, share
+    editProfile,
+    share,
   } = props;
 
   const [value, setValue] = useState([null, null]);
@@ -35,10 +37,10 @@ const DashboardModal = (props) => {
     alert(`The name you entered was: ${name}`);
   };
   const handleUpload = (e) => {
-    const imageUrl=URL.createObjectURL(file);
+    const imageUrl = URL.createObjectURL(file);
     const file = e.target.files;
     setUpload(file);
-    console.log(imageUrl)
+    console.log(imageUrl);
   };
 
   return (
@@ -87,39 +89,94 @@ const DashboardModal = (props) => {
           </div>
         </div>
       )}
+      {addCoupon === "addCoupon" && (
+        <div className="addNewPlan">
+          <Form onSubmit={handleSubmit}>
+            <div className="addUserTop">
+              <h4>Add New Coupon</h4>
+              <div className="addUserBody"></div>
+            </div>
+            <div className="addUserBody">
+      <div className="formInput">
+      <p className="h3Space">Name</p>
+      <input type="text" name="name" placeholder='coupon name' />
+
+      </div>
+      <div className="formInput">
+        <p className="h3Space">Percent Off</p>
+        <input type="number" name="number" placeholder="number in percentage" />
+      </div>
+      <div className="formInput">
+      <p className="h3Space">Coupon Code</p>
+            <input type="text" name="name" placeholder='enter coupon serect code' />
+          </div>
+      <div className="formInput">
+      <p className="h3Space">Duration in months</p>
+            <input type="number" name="number" placeholder='Duration'/>
+          </div>
+    <div >
+    <Link to={-1}><button  style={{
+        marginRight:'50px', backgroundColor:'green', border:"none", borderRadius: '5px', padding:10, color:'#fff', width:"100px", fontSize:16,}}>Create</button></Link>
+      <button style={{
+        marginRight:'50px', backgroundColor:'orange',border:"none", borderRadius: '5px', padding:10, color:'#fff', width:"100px", fontSize:16,}} onClick={onclose} >Cancel</button>
+    </div>
+    </div>
+          </Form>
+        </div>
+      )}
       {addPlan === "addPlan" && (
         <div className="addNewPlan">
           <Form onSubmit={handleSubmit}>
-            <div className="planFormInput">
-              <p>Name</p>
-              <input type="text" name="name" placeholder="Name" />
-            </div>
-            <div style={{ display: "flex" }}>
-              <div className="planFormInput">
-                <p>Monthly Price</p>
-                <input type="number" name="name" placeholder="Name" />
+            <div className="addUserTop">
+              <h4>Add New Plan</h4>
+              <div className="addUserBody">
+                <div className="formInput">
+                  <p>Plan Name</p>
+                  <select>
+                    <option>select plan</option>
+                    <option>Basic Plan</option>
+                    <option>Pro Plan</option>
+                    <option>Broz</option>
+                    <option>yearly Pro</option>
+                    <option>yearly Bronz</option>
+                    <option>Basic yearly</option>
+                  </select>
+                </div>
+                <div className="formInput">
+                  <p>Plan Price</p>
+                  <input
+                    type="number"
+                    name="number"
+                    placeholder="enter price"
+                  />
+                </div>
+                <div className="formInput">
+                  <p>Plan Trail</p>
+                  <input type="text" name="name" placeholder="plan trail" />
+                </div>
+                <div className="formInput">
+                  <p>Plan Interval</p>
+                  <select>
+                    <option>select plan interval</option>
+                    <option>Daily</option>
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>yearly</option>
+                  </select>
+                </div>
+                <div className="formInput">
+                  <p>Plan Teams</p>
+                  <input
+                    type="number"
+                    name="number"
+                    placeholder="input number of team "
+                  />
+                </div>
+
+                <button className="createBtn"> Save</button>
+                <button className="createBtn"> Cancel</button>
               </div>
-              <div className="planFormInput">
-                <p>Annual Price</p>
-                <input type="number" name="name" placeholder="Name" />
-              </div>
             </div>
-            <div style={{ display: "flex" }}>
-              <div className="planFormInput">
-                <p>Trail Days</p>
-                <input type="number" name="name" placeholder="Name" />
-              </div>
-              <div className="planFormInput">
-                <p>Trail Days</p>
-                <input type="number" name="name" placeholder="Name" />
-              </div>
-            </div>
-            <div className="planFormInput">
-              <p>Desscription</p>
-              <textarea rows={5} />
-            </div>
-            <button className="createBtn"> Save</button>
-            <button className="createBtn"> Cancel</button>
           </Form>
         </div>
       )}
@@ -187,14 +244,57 @@ const DashboardModal = (props) => {
               )}
             />
           </LocalizationProvider>
-          <div >
-            <button style={{height:'50px', border:'none', borderRadius:'8px', margin: '5px', width:'100px', color:'#fff'}}>Last 30 Days</button>
-            <button style={{height:'50px', border:'none', borderRadius:'8px', margin: '5px', width:'200px', color:'#fff'}}>
-              <span>Time Zone</span>
-              <input type='text' placeholder="Africa"/>
+          <div>
+            <button
+              style={{
+                height: "50px",
+                border: "none",
+                borderRadius: "8px",
+                margin: "5px",
+                width: "100px",
+                color: "#fff",
+              }}
+            >
+              Last 30 Days
             </button>
-            <button style={{height:'50px', border:'none', borderRadius:'8px', margin: '5px', width:'120px', backgroundColor:'blue', color:'#fff'}}>Apply</button>
-            <button style={{height:'50px', border:'none', borderRadius:'8px', margin: '5px', width:'100px', color:'#fff'}}>Cancel</button>
+            <button
+              style={{
+                height: "50px",
+                border: "none",
+                borderRadius: "8px",
+                margin: "5px",
+                width: "200px",
+                color: "#fff",
+              }}
+            >
+              <span>Time Zone</span>
+              <input type="text" placeholder="Africa" />
+            </button>
+            <button
+              style={{
+                height: "50px",
+                border: "none",
+                borderRadius: "8px",
+                margin: "5px",
+                width: "120px",
+                backgroundColor: "blue",
+                color: "#fff",
+              }}
+            >
+              Apply
+            </button>
+            <button
+              style={{
+                height: "50px",
+                border: "none",
+                borderRadius: "8px",
+                margin: "5px",
+                width: "100px",
+                color: "#fff",
+              }}
+            >
+              Cancel
+            </button>
           </div>
         </div>
       )}
@@ -205,18 +305,18 @@ const DashboardModal = (props) => {
             <p>Edit admin profile</p>
           </div>
           <Form onSubmit={handleSubmit}>
-          <div className= 'col-lg-3'>
-          <label htmlFor="logoUpload" >
-            <img src='' alt="socaildash" />
-              <input
-                type="file"
-                id="logoUpload"
-                accept="image/*"
-                onChange={handleUpload}
-                style={{ display: "none" }}
-              />
-          </label>
-        </div>
+            <div className="col-lg-3">
+              <label htmlFor="logoUpload">
+                <img src="" alt="socaildash" />
+                <input
+                  type="file"
+                  id="logoUpload"
+                  accept="image/*"
+                  onChange={handleUpload}
+                  style={{ display: "none" }}
+                />
+              </label>
+            </div>
             <div className="formInput">
               <input type="text" name="name" placeholder="First Name" />
               <input type="text" name="name" placeholder="Last Name" />
@@ -237,14 +337,64 @@ const DashboardModal = (props) => {
           </Form>
         </div>
       )}
-    
+
       {share === "share" && (
         <div>
-          <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><DownloadIcon /> Download PDF</p>
-          <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><SendIcon /> Send Via Email</p>
-          <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><SwapCallsIcon /> Share Link</p>
-          <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><AddIcon /> Add to Report</p>
-          <p style={{margin:'20px', alignIten:'center', width:'150px', padding:'5px 10px', cursor:'pointer' }}><SlideshowIcon /> Present</p>
+          <p
+            style={{
+              margin: "20px",
+              alignIten: "center",
+              width: "150px",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+          >
+            <DownloadIcon /> Download PDF
+          </p>
+          <p
+            style={{
+              margin: "20px",
+              alignIten: "center",
+              width: "150px",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+          >
+            <SendIcon /> Send Via Email
+          </p>
+          <p
+            style={{
+              margin: "20px",
+              alignIten: "center",
+              width: "150px",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+          >
+            <SwapCallsIcon /> Share Link
+          </p>
+          <p
+            style={{
+              margin: "20px",
+              alignIten: "center",
+              width: "150px",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+          >
+            <AddIcon /> Add to Report
+          </p>
+          <p
+            style={{
+              margin: "20px",
+              alignIten: "center",
+              width: "150px",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+          >
+            <SlideshowIcon /> Present
+          </p>
         </div>
       )}
 

@@ -47,6 +47,7 @@ const Header = () => {
         pathName === "/admin/plans" ||
         pathName === "/admin/adminprofile" ||
         pathName === "/admin/user/edit" ||
+        pathName === "/admin/plan/edit" ||
         pathName === "/admin/user/view" ||
         pathName === "/admin/users") && (
         <div className="headerStyle">
@@ -111,6 +112,7 @@ const Header = () => {
           </div>
       )}
       {(pathName === "/admin/coupons" ||
+      pathName === "/admin/coupon/edit" ||
         pathName === "/admin/orders" ||
         pathName === "/admin/settings") && (
         <div className="headerStyle">
