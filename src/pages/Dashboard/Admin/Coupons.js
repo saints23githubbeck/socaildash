@@ -19,6 +19,8 @@ const Coupons = () => {
   const [share, setShare] = useState("");
   const navigate = useNavigate();
 
+ 
+
 
   const handleOpen = (item) => {
     setShowModal(true);
@@ -131,12 +133,12 @@ const Coupons = () => {
             </th>
             <th className="thead">
             Coupon Code
-              <BiFilterAlt className="" />
+              <BiFilterAlt className="" onClick={() => ("")}/>
             </th>
             <th className="thead">Duration</th>
             <th className="thead">
             Date
-              <BiFilterAlt className="" />
+              <BiFilterAlt className="" onClick={() => ("")}/>
             </th>
             <th className="thead tcenter">Actions</th>
           </tr>

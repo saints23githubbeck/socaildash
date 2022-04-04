@@ -26,6 +26,7 @@ const User = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [managePassword, setManagePassword] = useState("");
 
+  
   const  status = (status) =>{
     switch (status) {
       case "Active":
@@ -115,16 +116,16 @@ const User = () => {
             <th className="thead tcenter">Name</th>
             <th className="thead">
               Email
-              <BiFilterAlt className="thead" />
+              <BiFilterAlt className="thead"  onClick={() => ('')} />
             </th>
             <th className="thead">
               Verified
-              <BiFilterAlt className="" />
+              <BiFilterAlt className=""  onClick={() => ('')}/>
             </th>
             <th className="thead">Status</th>
             <th className="thead">
               Role
-              <BiFilterAlt className="" />
+              <BiFilterAlt className=""  onClick={() => ('')}/>
             </th>
             <th className="thead">Date</th>
             <th className="thead tcenter">Actions</th>

@@ -237,6 +237,7 @@ height: 600px; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .socialCard {
+  cursor: pointer;
   text-align: center;
   padding: 15px 0px;
   margin-bottom: 20px;
@@ -247,7 +248,12 @@ height: 600px; */
   box-sizing: border-box;
   background: #ffffff;
 }
-
+.integrationmodal{
+  width: 250px; 
+  text-align: center;
+  padding: 100px;
+  background-color: #f545;
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .children {
     margin-top: 50px;
